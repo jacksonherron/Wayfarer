@@ -12,21 +12,23 @@ const NavBar = ({ logout, currentUser, setCurrentUser }) => {
     );
 
     const authLinks = (
-        <li className="nav-item">
-            <span className="nav-link" onClick={ logout } style={{ cursor: 'pointer'}}>Logout</span>
-        </li>
+        <>
+            <Link className="nav-link" to='/'>Home</Link>
+            <Link className="nav-link" to='/profile'>Profile</Link>
+            <li className="nav-item">
+                <span className="nav-link" onClick={ logout } style={{ cursor: 'pointer'}}>Logout</span>
+            </li>
+        </>
     )
 
     return (
         <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+            <Link className="navbar-brand" to="/">Wayfarer</Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
-        
             <div className="collapse navbar-collapse" id="navbarsExample04">
             <ul className="navbar-nav mr-auto">
-                <Link className="navbar-brand" to="/">Wayfarer</Link>
-                { currentUser ? authLinks : links }
                 <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" href="/" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
                     <div className="dropdown-menu" aria-labelledby="dropdown04">
@@ -39,6 +41,9 @@ const NavBar = ({ logout, currentUser, setCurrentUser }) => {
             <form className="form-inline my-2 my-md-0">
                 <input className="form-control" type="text" placeholder="Search" />
             </form>
+            <ul className="navbar-nav">
+            { currentUser ? authLinks : links }
+            </ul>
             </div>
         </nav>
     );
