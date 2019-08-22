@@ -45,6 +45,21 @@ app.get('/', (req, res) => {
 });
 
 
+
+app.use('/api/v1/auth', routes.auth);
+
+app.use('/api/v1/users', routes.users);
+
+app.use('/api/v1/cities', routes.cities);
+
+app.use('/api/v1/posts', routes.posts);
+
+
+
+
+
+
+
 app.listen(PORT, () => {
     console.log(`Server is live on port ${PORT}`)
 });
