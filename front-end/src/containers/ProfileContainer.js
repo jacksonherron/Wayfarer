@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Profile extends Component {
+class ProfileContainer extends Component {
     state = {
         currentUser: this.props.currentUser
     };
@@ -15,4 +15,4 @@ class Profile extends Component {
     };
 };
 
-export default Profile;
+export default ProfileContainer;
