@@ -7,8 +7,18 @@ class Login extends Component {
     state = {
         email: '',
         password: '',
-        error: null,
+        errors: null,
     };
+
+    clearModal = () => {
+        const modal = document.getElementById('loginModal');
+        const modalBackdrop = document.querySelector('.modal-backdrop');
+        modal.classList.remove('show');
+        modal.style.display = 'none';
+        modal.removeAttribute('aria-modal');
+        modal.setAttribute('aria-hidden', true);
+        modalBackdrop.parentNode.removeChild(modalBackdrop);
+    }
 
     handleChange = event => {
         this.setState({
@@ -21,10 +31,10 @@ class Login extends Component {
             email: this.state.email,
             password: this.state.password
         }
-        console.log(userInfo)
+
         axios.post(`${API_URL}/auth/login`, userInfo, { withCredentials: true })
             .then(res => {
-                console.log(res)
+                this.clearModal();
                 this.props.setCurrentUser(res.data.id);
                 this.props.history.push('/profile')
             })
@@ -37,17 +47,25 @@ class Login extends Component {
     render() {
         return (
             <>
-                <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#loginModal">
-                Login
-                </button>
+                 <li className="nav-item">
+                    <span className="nav-link" data-toggle="modal" data-target="#loginModal" style={{ cursor: 'pointer'}}>Login</span>
+                </li>
                 
                 <div className="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div className="modal-dialog" role="document">
+                    <div className="modal-dialog modal-dialog-centered" role="document">
                         <div className="modal-content">
+                            {this.state.errors && this.state.errors.map((e, i) => (
+                                <div className="alert alert-danger alert-dismissible fade show" style={{width: '100%'}} role="alert" key={i}>
+                                    {e.message}
+                                    <button type="button" className="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            ))}
                             <div className="modal-header">
                                 <h5 className="modal-title" id="exampleModalLabel">Login</h5>
                                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
+                                    <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div className="modal-body">
