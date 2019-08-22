@@ -12,7 +12,7 @@ const sendErrorResponse = (res, error) => {
 		message: 'Something went wrong, please try again'
 	});
 };
-​
+
 module.exports = {
     sendSuccessResponse,
     sendErrorResponse,

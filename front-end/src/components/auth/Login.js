@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import API_URL from '../../constants';
+import { withRouter } from 'react-router-dom';
+import { API_URL } from '../../constants';
 
 class Login extends Component {
     state = {
@@ -16,16 +17,20 @@ class Login extends Component {
     };
 
     handleSubmit = event => {
-        const userInfo = this.state;
+        const userInfo = {
+            email: this.state.email,
+            password: this.state.password
+        }
         console.log(userInfo)
-        // axios.post(`${API_URL}/auth/login`, userInfo, { withCredentials: true })
-        //     .then(res => {
-        //         this.props.setCurrentUser(res.data.id);
-        //         this.props.history.push('/profile')
-        //     })
-        //     .catch(err => {
-        //         this.setState({ errors: err.response.data.errors });
-        // });
+        axios.post(`${API_URL}/auth/login`, userInfo, { withCredentials: true })
+            .then(res => {
+                console.log(res)
+                this.props.setCurrentUser(res.data.id);
+                this.props.history.push('/profile')
+            })
+            .catch(err => {
+                this.setState({ errors: err.response.data.errors });
+        });
     };
 
 
@@ -49,11 +54,11 @@ class Login extends Component {
                                 <form>
                                     <div>
                                         <label htmlFor="email">Email</label>
-                                        <input type="email" id="email" name="email" value={this.state.email} onChange={this.handleChange} className="form-control form-control-lg" />
+                                        <input type="email" id="email-login" name="email" value={this.state.email} onChange={this.handleChange} className="form-control form-control-lg" />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="password">Password</label>
-                                        <input type="password" id="password" name="password" value={this.state.password} onChange={this.handleChange} className="form-control form-control-lg" />
+                                        <input type="password" id="password-login" name="password" value={this.state.password} onChange={this.handleChange} className="form-control form-control-lg" />
                                     </div>
                                 </form>
                             </div>
@@ -66,4 +71,4 @@ class Login extends Component {
     };
 };
 
-export default Login;
+export default withRouter(Login);
