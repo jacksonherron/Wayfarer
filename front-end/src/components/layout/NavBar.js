@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Login from '../auth/Login'
+import Register from '../auth/Register'
 
-const NavBar = ({ logout, currentUser }) => {
+const NavBar = ({ logout, currentUser, setCurrentUser }) => {
     const links = (
         <>
+            <Register />
+            <Login setCurrentUser={setCurrentUser}/>
         </>
     );
 

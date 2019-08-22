@@ -50,9 +50,9 @@ class Register extends Component {
     render() {
         return (
             <>
-                <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#registerModal">
-                Register
-                </button>
+                <li className="nav-item">
+                    <span className="nav-link" data-toggle="modal" data-target="#registerModal" style={{ cursor: 'pointer'}}>Register</span>
+                </li>
                 <div className="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-centered" role="document">
                         <div className="modal-content">

@@ -47,9 +47,9 @@ class Login extends Component {
     render() {
         return (
             <>
-                <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#loginModal">
-                Login
-                </button>
+                 <li className="nav-item">
+                    <span className="nav-link" data-toggle="modal" data-target="#loginModal" style={{ cursor: 'pointer'}}>Login</span>
+                </li>
                 
                 <div className="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-centered" role="document">
