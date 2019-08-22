@@ -1,82 +1,55 @@
 const db = require('../models');
+const { sendErrorResponse, sendSuccessResponse } = require('./response') 
 
-function getTime() {
-    return new Date().toLocaleString();
+const index = (req, res) => {
+    db.Post.find({}).populate('user city', '-password -_id -__v' ).exec({password: 0, _v:0}, (error, foundAllPosts) => {
+        if (error) return sendErrorResponse(res, error);
+        sendSuccessResponse(res, foundAllPosts);
+    })
+};
+
+const show = (req, res) => {
+    db.Post.findById({ _id: req.params._id }, (error, foundOnePost) => {
+        if (error) return sendErrorResponse(res, error);
+        sendSuccessResponse(res, foundOnePost);
+    });
+};
+
+const create = (req, res) => {
+    console.log(req.body)
+    db.Post.create(req.body, (error, createdPost) => {
+        if (error) return sendErrorResponse(res, error);
+        db.User.findById(req.body.userId, {password: 0}, (error,foundUser)=>{
+            if (error) return sendErrorResponse(res, error);
+            db.Post.user = foundUser
+            db.City.findById(req.body.cityId, (error,foundCity)=>{
+                if (error) return sendErrorResponse(res, error);
+                db.Post.city = foundCity
+                createdPost.save();
+                sendSuccessResponse(res, createdPost);
+            });
+        });  
+    });
+};
+
+const update = (req, res) => {
+    db.Post.findByIdAndUpdate(req.params._id, req.body, {new: true }, (error, updatedPost) => {
+        if (error) return sendErrorResponse( res, error);
+        sendSuccessResponse(res, updatedPost)
+    })
+};
+
+const del = (req, res) => {
+    db.Post.findByIdAndDelete({ _id: req.params._id }, (error, deletedPost) => {
+        if (error) return sendErrorResponse( res, error);
+        sendSuccessResponse(res, deletedPost);
+    })
 };
 
 module.exports = {
-    index: (req, res) => {
-        db.Post.find({}, (err, allPosts) => {
-            console.log(allPosts);
-            if (err) return res.sendStatus(400).json({
-                status: 400,
-                message: 'Something went wrong, please try again'
-            });
-            res.status(200).json({
-                status: 200,
-                numberOfResults: allPosts.length,
-            data: allPosts,
-                requestedAt: getTime(),
-            });
-        });
-    },
-
-    show: (req, res) => {
-        db.Post.findById(req.params._id, (err, foundPost) => {
-            if (err) return res.status(400).json({
-                status: 400,
-                message: 'Something went wrong, YOU GOOFED',
-                error: err,
-            });
-            res.status(200).json({
-                status: 200,
-                data: foundPost,
-                requestedAt: getTime()
-            });
-        });
-    },
-
-    new: (req, res) => {
-        const newPost = req.body;
-        db.Post.create(newPost, (err, createdPost) => {
-            if (err) return res.status(400).json({
-                status: 400,
-                message: 'Something went wrong, please try again',
-            });
-            res.status(200).json({
-                status: 201,
-                data: createdPost,
-                requestedAt: getTime(),
-            });
-        });
-    },
-
-    update: (req, res) => {
-        db.Post.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedRecipe) => {
-            console.log(req.body);
-            if (err) return res.status(400).json({
-                status: 400,
-                message: 'Something went wrong, please try again',
-            });
-            res.status(200).json({
-                status: 202,
-                data: updatedRecipe,
-                requestedAt: getTime(),
-            });
-        });
-    },
-
-    delete: (req, res) => {
-        db.Post.findOneAndDelete(req.params.name, (err, deletedPost) => {
-            if (err) return res.status(400).json({
-                status: 400,
-                message: 'Something went wrong, please try again',
-            });
-            res.status(200).json({
-                status: 200,
-                message: `Successfully deleted ${deletedPost}`,
-                requestedAt: getTime(),
-            });
-        });
-    }, 
+    index,
+    show,
+    create,
+    update,
+    del
 };
