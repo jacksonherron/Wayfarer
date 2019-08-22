@@ -29,8 +29,8 @@ class Register extends Component {
         axios.post(`${API_URL}/auth/register`, newUser)
           .then(res => this.props.history.push('/'))     
           .catch(err => {
-              console.log(err)
-            // this.setState({ errors: err.response.data.errors });
+            //   console.log(err)
+            this.setState({ errors: err.response.data.errors });
           });
       };
 
