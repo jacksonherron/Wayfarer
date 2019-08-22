@@ -17,6 +17,6 @@ const citySchema = new Schema ({
     },
 });
 
-const City = mongoose.model('User', citySchema);
+const City = mongoose.model('City', citySchema);
 
 module.exports = City;
