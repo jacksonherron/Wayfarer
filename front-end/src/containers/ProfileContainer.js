@@ -9,7 +9,6 @@ class ProfileContainer extends Component {
         return(
             <>
                 <h1>Profile Container</h1>
-                <h2>{this.state.currentUser}</h2>
             </>
         );
     };

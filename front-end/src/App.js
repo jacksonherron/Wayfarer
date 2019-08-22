@@ -8,8 +8,7 @@ import { API_URL } from './constants'
 
 class App extends Component {
   state = { 
-    currentUser: 'Jackson'
-    // currentUser: localStorage.getItem('uid')
+    currentUser: localStorage.getItem('uid')
   };
 
   setCurrentUser = (userId) => {
@@ -18,11 +17,12 @@ class App extends Component {
   }
 
   handleLogout = () => {
+    localStorage.removeItem('uid')
     axios.post(`${API_URL}/auth/logout`, { withCredentials: true })
       .then(() => {
-        this.setState( {currentUser: null })
+        this.setState( {currentUser: null });
+        this.props.history.push('/');
       })
-      .catch((err) => console.log(err))
   };
 
 
