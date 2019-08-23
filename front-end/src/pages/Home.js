@@ -1,10 +1,9 @@
 import React from 'react';
-import Carousel from '../components/Carousel/Carousel';
 
-const Home = ({currentUser, setCurrentUser}) => {
+const Home = (props) => {
     return (
         <>
-            <Carousel />
+            <h1>Home Page</h1>
         </>
     );
 };

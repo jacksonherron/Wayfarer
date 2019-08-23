@@ -1,7 +1,8 @@
 import React from 'react';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import Landing from '../pages/Landing';
+import Profile from '../pages/Profile';
 import Home from '../pages/Home';
-import Profile from '../pages/Profile'
 
 
 const Routes = ({ currentUser, setCurrentUser }) => {
@@ -15,7 +16,8 @@ const Routes = ({ currentUser, setCurrentUser }) => {
 
     return (
         <Switch>
-            <Route exact path='/' render={(props) => <Home {...props} currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
+            <Route exact path='/' render={(props) => <Landing {...props} currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
+            <PrivateRoute path='/home' component={ Home } />
             <PrivateRoute path='/profile' component={ Profile } />
         </Switch>
     );

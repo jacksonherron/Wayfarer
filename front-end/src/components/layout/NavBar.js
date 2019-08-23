@@ -13,7 +13,7 @@ const NavBar = ({ logout, currentUser, setCurrentUser }) => {
 
     const authLinks = (
         <>
-            <Link className="nav-link" to='/'>Home</Link>
+            <Link className="nav-link" to='/home'>Home</Link>
             <Link className="nav-link" to='/profile'>Profile</Link>
             <li className="nav-item">
                 <span className="nav-link" onClick={ logout } style={{ cursor: 'pointer'}}>Logout</span>
@@ -23,7 +23,7 @@ const NavBar = ({ logout, currentUser, setCurrentUser }) => {
 
     return (
         <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-            <Link className="navbar-brand" to="/">Wayfarer</Link>
+            <div className="navbar-brand" to="/">Wayfarer</div>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
