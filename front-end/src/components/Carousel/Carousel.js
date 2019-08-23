@@ -17,42 +17,42 @@ const Carousel = () => {
             </ol>
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80" className="d-block w-100 h-75" alt="image of SF bridge"/>
+                <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80" className="d-block w-100 h-75" alt=" SF bridge"/>
                 <div className="carousel-caption">
                     <h5>San Francisco</h5>
                     <p>Sit in on a yoga session in Dolores Park or marvel at the Dutch Windmill across from Ocean Beach.</p>
                 </div>
                 </div>
                 <div className="carousel-item">
-                <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" className="d-block w-100 h-75" alt="image of london"/>
+                <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" className="d-block w-100 h-75" alt="london"/>
                 <div className="carousel-caption">
                     <h5>London</h5>
                     <p>In London, history collides with art, fashion, food, and good British ale.</p>
                 </div>
                 </div>
                 <div className="carousel-item">
-                <img src="https://images.unsplash.com/photo-1559415096-cc3543f4f080?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" className="d-block w-100 h-75" alt="image of gibraltar"/>
+                <img src="https://images.unsplash.com/photo-1559415096-cc3543f4f080?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" className="d-block w-100 h-75" alt="gibraltar"/>
                 <div className="carousel-caption">
                     <h5>Gibraltar</h5>
                     <p>The monolithic Rock of Gibraltar entices tourists with its lush greenery and the friendly Barbary Macaques ubiquitous to the area. </p>
                 </div>
                 </div>
                 <div className="carousel-item">
-                <img src="https://images.unsplash.com/photo-1524293581917-878a6d017c71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" className="d-block w-100 h-75" alt="image of sydney opera house"/>
+                <img src="https://images.unsplash.com/photo-1524293581917-878a6d017c71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" className="d-block w-100 h-75" alt="sydney opera house"/>
                 <div className="carousel-caption">
                     <h5>Sydney</h5>
                     <p>The marvelous Sydney Opera House looks like a great origami sailboat, floating peacefully in a harbor.</p>
                 </div>
                 </div>
                 <div className="carousel-item">
-                <img src="https://images.unsplash.com/photo-1538097304804-2a1b932466a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80" className="d-block w-100" alt="image of space needle"/>
+                <img src="https://images.unsplash.com/photo-1538097304804-2a1b932466a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80" className="d-block w-100" alt="space needle"/>
                 <div className="carousel-caption">
                     <h5>Seattle</h5>
                     <p>Glide to the top of the Space Needle for panoramic views of the surrounding mountain ranges and Puget Sound.</p>
                 </div>
                 </div>
                 <div className="carousel-item">
-                <img src="https://images.unsplash.com/photo-1492571350019-22de08371fd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1298&q=80" className="d-block w-100" alt="image of tokyo"/>
+                <img src="https://images.unsplash.com/photo-1492571350019-22de08371fd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1298&q=80" className="d-block w-100" alt="tokyo"/>
                 <div className="carousel-caption">
                     <h5>Tokyo</h5>
                     <p>Tradition collides with pop culture in Tokyo, where you can reverently wander ancient temples before rocking out at a karaoke bar. </p>
