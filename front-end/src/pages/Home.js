@@ -1,9 +1,10 @@
 import React from 'react';
+import Cities from '../components/Cities/Cities';
 
 const Home = (props) => {
     return (
         <>
-            <h1>Home Page</h1>
+            <Cities/>
         </>
     );
 };
