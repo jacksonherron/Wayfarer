@@ -1,11 +1,16 @@
 import React from 'react';
+import PostsContainer from '../containers/PostsContainer';
 
-const Home = (props) => {
-    return (
-        <>
-            <h1>Home Page</h1>
-        </>
-    );
+class Home {
+
+    render() {
+        return (
+            <>
+                <h1>Home Page</h1>
+                <PostsContainer />
+            </>
+        );
+    }
 };
 
 export default Home;
