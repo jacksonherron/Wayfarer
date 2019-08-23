@@ -8,16 +8,15 @@ class PostsContainer extends Component {
         posts: []
     };
 
-    componentDidMount() {
+    componentDidUpdate() {
         this.fetchData();
+        console.log("PostsContainer Props:", this.props);
     };
 
     fetchData = () => {
-
-
-        PostModel.index(this.props.city)
-            .then(res => console.log(res))
-            .catch(err => console.log(err));
+        PostModel.index(this.props.city_id)
+            .then(res => (res))
+            .catch(err => (err));
     };
 
     render() {

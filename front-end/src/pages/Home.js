@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import CityModel from '../models/CityModel'
 import Cities from '../components/Cities/Cities';
 import PostsContainer from '../containers/PostsContainer';
@@ -6,35 +7,34 @@ import './home.css'
 
 class Home extends Component {
     state = {
-        city: ''
+        cities: []
     }
     
-    fetchCity = (name) => {
-        CityModel.getCity(name)
-            .then(res => console.log(res.data.data[0]))
+    fetchCities = () => {
+        CityModel.getAll()
+            .then(res => this.setState({
+                cities: res.data.data
+            }))
             .catch(err => console.log(err));
-    }
-
-    selectCity = (event) => {
-        console.log(event)
-    }
+    };
 
     componentDidMount() {
-        this.fetchCity(this.state.city)
-    }
+        this.fetchCities(this.state.city);
+    };
 
     render() {
         return (
             <>
                 <div className="split left">
-                    <Cities selectCity={this.selectCity} />
+                    <Cities selectCity={this.selectCity} cities={this.state.cities} />
                 </div>
-                <div className="split right">
-                    <PostsContainer />
-                </div>
+                <Switch>
+                    <Route exact path='/home' component={ PostsContainer } className="split right"></Route>
+                    <Route path='/home/:name' component={ PostsContainer } className="split right"></Route>
+                </Switch>
             </>
         );
-    }
+    };
 };
 
 export default Home;

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Cities.css';
 
-const Cities = () => {
+const Cities = ({selectCity}) => {
     return (
         // <div>
         //     tokyo, sf, london, gibralter syndey, seattle
