@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Cities from '../components/Cities/Cities';
 import PostsContainer from '../containers/PostsContainer';
 
 class Home extends Component {
@@ -6,6 +7,7 @@ class Home extends Component {
         return (
             <>
                 <h1>Home Page</h1>
+                <Cities/>
                 <PostsContainer />
             </>
         );
