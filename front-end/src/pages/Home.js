@@ -1,13 +1,10 @@
 import React from 'react';
-import Carousel from '../components/Carousel/Carousel';
-import Landing from '../components/Landing/Landing';
 
 
-const Home = ({currentUser, setCurrentUser}) => {
+const Home = (props) => {
     return (
-        <>
-            <Carousel />
-            <Landing />
+        <>  
+            <h1>Home Page</h1>
         </>
     );
 };
