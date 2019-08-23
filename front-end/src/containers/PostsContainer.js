@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import PostsModel from '../models/PostsModel';
+import PostModel from '../models/PostModel';
 import NewPost from '../components/NewPost/NewPost'
 import Post from '../components/Post/Post'
 
@@ -8,14 +8,15 @@ class PostsContainer extends Component {
         posts: []
     };
 
-    componentDidMount() {
+    componentDidUpdate() {
         this.fetchData();
+        console.log("PostsContainer Props:", this.props);
     };
 
     fetchData = () => {
-        PostsModel.index(this.props.city)
-            .then(res => console.log(res))
-            .catch(err => console.log(err));
+        PostModel.index(this.props.city_id)
+            .then(res => (res))
+            .catch(err => (err));
     };
 
     render() {

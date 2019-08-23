@@ -3,6 +3,14 @@ const db = require('../models');
 //NOTE  acquires refractored functions for error and success responses
 const { sendErrorResponse, sendSuccessResponse } = require('./response');
 
+const cities = {
+    london: "London",
+    sydney: "Sydney",
+    gibraltar: "Gibraltar",
+    tokyo: "Tokyo",
+    sanfrancisco: "San Francisco",
+    seattle: "Seattle"
+}
 
 const index = (req, res) => {
     db.City.find({}).exec((error, foundAllCities) => {
@@ -12,9 +20,9 @@ const index = (req, res) => {
 };
 
 const show = (req, res) => {
-    db.City.findById({ _id: req.params._id }, (error, foundOneCity) => {
+    db.City.find({ name: cities[req.params.name] }, (error, foundCity) => {
         if (error) return sendErrorResponse(res, error);
-        sendSuccessResponse(res, foundOneCity);
+        sendSuccessResponse(res, foundCity);
     });
 };
 
