@@ -1,0 +1,9 @@
+.landing {
+    border: 3px solid red;
+    position: absolute;
+    text-align: center;
+}
+
+.marketing {
+    margin-top: 80px;
+}
