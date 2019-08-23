@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PostsContainer from '../containers/PostsContainer';
 
-class Home {
-
+class Home extends Component {
     render() {
         return (
             <>
