@@ -36,9 +36,9 @@ class Register extends Component {
             password: this.state.password,
             password2: this.state.password2,
         }
-
         axios.post(`${API_URL}/auth/register`, newUser)
             .then(res => {
+                console.log('posted user', res)
                 this.clearModal();
                 this.props.history.push('/');
             })     
@@ -53,7 +53,7 @@ class Register extends Component {
                 <li className="nav-item">
                     <span className="nav-link" data-toggle="modal" data-target="#registerModal" style={{ cursor: 'pointer'}}>Register</span>
                 </li>
-                <div className="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal fade" id="registerModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-centered" role="document">
                         <div className="modal-content">
                             {this.state.errors && this.state.errors.map((e, i) => (
