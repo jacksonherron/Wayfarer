@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Login from '../auth/Login'
 import Register from '../auth/Register'
+import './NavBar.css';
 
 const NavBar = ({ logout, currentUser, setCurrentUser }) => {
     const links = (
