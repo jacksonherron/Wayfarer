@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PostsModel from '../models/PostsModel';
 import NewPost from '../components/NewPost/NewPost'
+import Post from '../components/Post/Post'
 
 class PostsContainer extends Component {
     state = {
@@ -20,8 +21,10 @@ class PostsContainer extends Component {
     render() {
         return (
             <>
-                <div>PostsContainer</div>
                 <NewPost city={this.props.city} />
+                {this.state.posts && this.state.posts.map((post, i) => (
+                    <Post key={i}/>
+                ))}
             </>
         );
     };

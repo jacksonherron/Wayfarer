@@ -3,10 +3,10 @@ import './Cities.css';
 
 const Cities = () => {
     return (
-        <div>
-            tokyo, sf, london, gibralter syndey, seattle
+        // <div>
+        //     tokyo, sf, london, gibralter syndey, seattle
             <div className="city-container">
-                <div className="split left">
+                {/* <div className="split left"> */}
                     <a href='#' className="city-card">
                         <div className="card flex-row flex-wrap">
                             <div className="card-header border-0">
@@ -44,13 +44,12 @@ const Cities = () => {
                         </div>
                     </a>
                 </div>
-                <div className="split right">
+                /* <div className="split right">
                     <h1>POSTS</h1>
 
-                </div>
+                </div> */
 
-            </div>
-        </div >
+        // </div >
     )
 }
 

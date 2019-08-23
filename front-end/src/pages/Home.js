@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import Cities from '../components/Cities/Cities';
 import PostsContainer from '../containers/PostsContainer';
+import './home.css'
 
 class Home extends Component {
     render() {
         return (
             <>
-                <h1>Home Page</h1>
-                <Cities/>
-                <PostsContainer />
+                <div className="split left">
+                    <Cities />
+                </div>
+                <div className="split right">
+                    <PostsContainer />
+                </div>
             </>
         );
     }
