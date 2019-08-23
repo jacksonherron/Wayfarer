@@ -29,7 +29,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <NavBar logout={this.handleLogout} currentUser={this.state.currentUser} />
+        <NavBar logout={this.handleLogout} currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} />
         <Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} history={this.props.history}/>
       </>
     );
