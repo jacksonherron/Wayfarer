@@ -1,10 +1,10 @@
 import React from 'react';
-import Carousel from '../components/Carousel/Carousel';
+import LandingContainer from '../containers/LandingContainer';
 
 const Landing = ({currentUser, setCurrentUser}) => {
     return (
         <>
-            <Carousel />
+            <LandingContainer />
         </>
     );
 };
