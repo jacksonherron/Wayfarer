@@ -3,12 +3,12 @@ import LandingContainer from '../containers/LandingContainer';
 import Register from '../components/auth/Register';
 import Login from '../components/auth/Login';
 
-const Landing = ({currentUser, setCurrentUser}) => {
+const Landing = () => {
     return (
         <>
             <LandingContainer />
-            <button class="btn btn-primary btn-lg active" aria-pressed="true"><Register /></button>
-            <button class="btn btn-primary btn-lg active" aria-pressed="true"><Login /></button>
+            <button className="btn btn-primary btn-lg active"> <Register /></button>
+            <button className="btn btn-primary btn-lg active"> <Login /></button>
         </>
     );
 };
