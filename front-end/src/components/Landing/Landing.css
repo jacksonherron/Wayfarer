@@ -1,0 +1,45 @@
+
+.landing {
+    margin-top: 100px;
+    background-color: #D2D4D6;
+    color: white;
+}
+
+body {
+    background-color: #D2D4D6;
+}
+
+
+.landing h2 {
+    color: rgb(190, 63, 55)
+}
+
+.landing p {
+    color: black;
+}
+
+.btn li {
+    list-style-type: none;
+}
+
+.btn {
+    display: block;
+    width: 50%;
+    margin: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 40px;
+    background-color: rgb(190, 63, 55) !important;
+}
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+    .landing h2{
+        font-size: 50px;
+    }
+    .landing{
+        margin-top: 1px;
+    }
+}
