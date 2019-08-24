@@ -24,7 +24,6 @@ const show = (req, res) => {
 };
 
 const create = (req, res) => {
-    console.log(req.body)
     db.Post.create(req.body, (error, createdPost) => {
         if (error) return sendErrorResponse(res, error);
         db.User.findById(req.body.userId, {password: 0}, (error,foundUser)=>{
@@ -34,12 +33,16 @@ const create = (req, res) => {
                 if (error) return sendErrorResponse(res, error);
                 db.Post.city = foundCity
                 createdPost.save();
-                sendSuccessResponse(res, createdPost);
+                db.Post.findById(createdPost._id).populate('user').populate('city')
+                    .exec((err, foundPost) => {
+                        if (error) return sendErrorResponse(res, error);
+                        sendSuccessResponse(res, foundPost);
+                });
             });
         });  
     });
 };
-
+22
 const update = (req, res) => {
     db.Post.findByIdAndUpdate(req.params._id, req.body, {new: true }, (error, updatedPost) => {
         if (error) return sendErrorResponse( res, error);

@@ -38,7 +38,7 @@ class Login extends Component {
             .then(res => {
                 this.clearModal();
                 this.props.setCurrentUser(res.data.id);
-                this.props.history.push('/profile')
+                this.props.history.push('/home')
             })
             .catch(err => {
                 this.setState({ errors: err.response.data.errors });
