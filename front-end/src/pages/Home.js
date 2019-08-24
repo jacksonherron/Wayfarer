@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import CityModel from '../models/CityModel'
 import Cities from '../components/Cities/Cities';
 import PostsContainer from '../containers/PostsContainer';
@@ -19,7 +19,7 @@ class Home extends Component {
     };
 
     componentDidMount() {
-        this.fetchCities(this.state.city);
+        this.fetchCities();
     };
 
     render() {
@@ -28,9 +28,9 @@ class Home extends Component {
                 <div className="split left">
                     <Cities selectCity={this.selectCity} cities={this.state.cities} />
                 </div>
-                <Switch>
-                    <Route exact path='/home' component={ PostsContainer } className="split right"></Route>
-                    <Route path='/home/:name' component={ PostsContainer } className="split right"></Route>
+                <Switch className="split right">
+                    <Route exact path='/home' component={ PostsContainer } cities={this.state.cities}></Route>
+                    <Route path='/home/:name' component={ PostsContainer } cities={this.state.cities}></Route>
                 </Switch>
             </>
         );
