@@ -32,7 +32,7 @@ const register = (req, res) => {
                 }
 
                 db.User.create(newUser, (err, savedUser) => {
-                    if (err) return res.status(500).json({ status: 500, errors: [{message: err}] });
+                    if (err) return res.status(500).json({ status: 500, errors: [{message: 'Something went wrong. Please try again'}] });
                     res.status(201).json({ status: 201, message: 'success' });
                 });
             });
