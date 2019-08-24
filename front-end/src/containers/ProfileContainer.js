@@ -3,6 +3,7 @@ import axios from 'axios';
 import Profile from '../pages/Profile'
 import { API_URL } from '../constants'
 import ProfileForm from '../components/ProfileForm';
+import UserModel from '../models/UserModel';
 
 class ProfileContainer extends Component {
     state = {
@@ -27,25 +28,52 @@ class ProfileContainer extends Component {
 
     }
 
-    updateLocation = () => {
-        const isUpdatedLocation = l => {
-            return l._id === location._id;
-        };
+    updateLocation = (location) => {
+        const userId = localStorage.getItem('uid');
+        // const isUpdatedLocation = l => {
+        //     return l._id === this.profile._id;
+        // };
+        const user = this.state.profile;
+        user.location = location;
 
+        UserModel.update(userId, user)
+            .then((res) => {
+                // let location = this.state.profile.location;
+                // this.profile.find(isUpdatedLocation).body = this.location.body;
+                this.setState({ profile: res.data.profile });
+            });
+    }
 
     componentDidMount() {
-        const userId = localStorage.getItem('uid');
-        axios.get(`${API_URL}/users/${userId}`, { withCredentials: true })
-            .then(res => this.setState({ profile: res.data.data }))
-            .catch(err => console.log(err));
+        this.fetchData();
     };
 
+    fetchData = () => {
+        const userId = localStorage.getItem('uid');
+        UserModel.index(userId)
+            .then((res) => {
+                console.log(res);
+                this.setState({
+                    profile: res.data.profile,
+                });
+            })
+            .catch((err) => console.log(err))}
+    
+    // fetchData = () => {
+    //     UserModel.create().then((res) => {
+    //         this.setState ({
+    //             location: res.data.profile,
+    //         });
+    //     });
+    // };
+  
     render() {
+        console.log('Container State', this.state)
         return (
             <>
             <Profile profile={this.state.profile} />
 
-            <li data-location-index={this.state.location._id}>
+            <li data-location-index={this.state.profile._id}>
             <div>
             <span className='profile-item'>{this.props.location.body}</span>
             <span className='edit' onClick={this.toggleBodyForm}>Edit</span>
@@ -55,7 +83,7 @@ class ProfileContainer extends Component {
                 style={this.state.formStyle} 
                 autoFocus={true}
                 buttonName='Update Location!'
-                updateLocation={this.props.updateLocation}
+                updateLocation={this.updateLocation}
                 toggleBodyForm={this.toggleBodyForm} 
             />
             </li>

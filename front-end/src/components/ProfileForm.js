@@ -18,7 +18,7 @@ class ProfileForm extends Component {
     onSubmit = (event) => {
         event.preventDefault();
         const location = this.props.location;
-        location.body = this.state.location;
+        // location.body = this.state.location;
         this.props.updateLocation(location);
         this.setState({ location: '' });
         this.props.toggleBodyForm();

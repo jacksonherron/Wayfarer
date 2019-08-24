@@ -10,6 +10,9 @@ router.get('/:id', ctrl.users.show);
 
 router.get('/', ctrl.users.index);
 
+router.put('/:id', ctrl.users.update);
+
+
 
 
 
