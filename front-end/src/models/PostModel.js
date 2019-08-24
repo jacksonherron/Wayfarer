@@ -5,7 +5,7 @@ const endPoint = `${API_URL}/posts`;
 
 class PostModel {
     static index = (city) => {
-        const response = axios.get(endPoint, city);
+        const response = axios.get(endPoint, { params: { city: city._id } });
         return response;
     };
 

@@ -15,11 +15,13 @@ class Register extends Component {
 
     clearModal = () => {
         const modal = document.getElementById('registerModal');
+        const body = document.querySelector('.modal-open');
         const modalBackdrop = document.querySelector('.modal-backdrop');
         modal.classList.remove('show');
         modal.style.display = 'none';
         modal.removeAttribute('aria-modal');
         modal.setAttribute('aria-hidden', true);
+        body.classList.remove('modal-open');
         modalBackdrop.parentNode.removeChild(modalBackdrop);
     }
 
