@@ -1,0 +1,9 @@
+.new-post-btn {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    font-size: 1.75em;
+    font-weight: bold;
+    padding: 0;
+    text-align: center;
+}

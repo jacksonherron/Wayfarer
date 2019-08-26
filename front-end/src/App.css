@@ -1,0 +1,17 @@
+.modal-content {
+    background-color: #D2D4D6;
+}
+
+.modal-title {
+    color: rgb(190, 63, 55) !important;
+    font-weight: bolder;
+}
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) {
+    .modal-content {
+        margin: 0 !important;
+    }
+}

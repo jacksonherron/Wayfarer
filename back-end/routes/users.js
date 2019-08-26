@@ -7,8 +7,8 @@ const authRequired = require('../middleware/authRequired');
 
 // Get User Profile
 router.get('/:id', ctrl.users.show);
-
 router.get('/', ctrl.users.index);
+router.put('/:_id', ctrl.users.update);
 
 
 
