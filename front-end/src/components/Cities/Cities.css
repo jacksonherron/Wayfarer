@@ -72,3 +72,9 @@
       top: 70%;
     }
   }
+
+
+  .city-image {
+    height: 100px;
+    width: 100px;
+  }
