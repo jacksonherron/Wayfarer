@@ -1,7 +1,5 @@
 import React from 'react';
-
-
-
+import { Widget } from "@uploadcare/react-widget";
 import './ProfileContainer.css'
 
 
@@ -25,10 +23,10 @@ const ProfileContainer = ( { profile: { username , email, profile_photo, join_da
                     <div className="profile-img">
                         <img src={profile_photo} alt="user"/>
                             <div className="file btn btn-lg btn-primary">
-                                Change Photo
-                                <div className="form-group">
-                                    <label htmlFor="image">Image url</label>
-                                    <input type="text" id="image" name="image" />
+                                {/* Change photo */}
+                                <div>
+                            <label htmlFor='file'>Your file:</label>{' '}
+                            <Widget publicKey='ee98c7e89f4317e73f18' id='file' />
                                 </div>
             
             
