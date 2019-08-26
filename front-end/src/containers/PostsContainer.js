@@ -1,31 +1,62 @@
 import React, {Component} from 'react';
-import PostsModel from '../models/PostsModel';
-import NewPost from '../components/NewPost/NewPost'
-import Post from '../components/Post/Post'
+import PostModel from '../models/PostModel';
+import CityModel from '../models/CityModel';
+import NewPost from '../components/NewPost/NewPost';
+import Post from '../components/Post/Post';
 
 class PostsContainer extends Component {
     state = {
-        posts: []
+        city_url: this.props.match.params.name,
+        city: null,
+        posts: [],
     };
 
-    componentDidMount() {
-        this.fetchData();
+    componentDidMount = () => {
+        this.fetchPosts();
     };
 
-    fetchData = () => {
-        PostsModel.index(this.props.city)
-            .then(res => console.log(res))
-            .catch(err => console.log(err));
+    pushNewPost = (post) => {
+        const posts = this.state.posts;
+        posts.push(post);
+        this.setState({ posts })
+    }
+
+    fetchPosts = () => {
+        CityModel.getCity(this.state.city_url)
+            .then((res) => {
+                const city = res.data.data[0];
+                if (city) {
+                    PostModel.index(city)
+                    .then(res => {
+                        const posts = res.data.data;
+                        this.setState({
+                            city,
+                            posts,
+                        });
+                    });
+                };
+            });
     };
 
     render() {
-        return (
+        const cityFound = (
             <>
-                <NewPost city={this.props.city} />
-                {this.state.posts && this.state.posts.map((post, i) => (
-                    <Post key={i}/>
-                ))}
+                <NewPost city={this.state.city} pushNewPost={this.pushNewPost}/>
+                { this.state.posts.map(post => <Post post={post} />) }
             </>
+        )
+
+        const cityNotFound = (
+            <div className="card">
+                <div>You are on the home route or invalid city_url</div>
+                <div>New post button should not be displayed...</div>
+            </div>
+        )
+
+        return (
+            <div className="split right">
+                { this.state.city ? cityFound : cityNotFound }
+            </div>
         );
     };
 };

@@ -3,9 +3,9 @@ import { API_URL } from '../constants';
 
 const endPoint = `${API_URL}/posts`;
 
-class PostsModel {
+class PostModel {
     static index = (city) => {
-        const response = axios.get(endPoint, city);
+        const response = axios.get(endPoint, { params: { city: city._id } });
         return response;
     };
 
@@ -30,4 +30,4 @@ class PostsModel {
     };
 };
 
-export default PostsModel;
+export default PostModel;
