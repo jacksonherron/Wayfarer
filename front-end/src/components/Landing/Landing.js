@@ -20,7 +20,7 @@ const Landing = () => {
           <div className="col-lg-4">
             <img className="rounded-circle" src="https://media.licdn.com/dms/image/C5603AQGqiGztI2yfxg/profile-displayphoto-shrink_200_200/0?e=1571875200&v=beta&t=1-FNJuu9OkUZtI3pKE5cz40xuQyAa1M2-jDfuucFRTI" alt="Christian" width="140" height="140"/>
             <h2>"Best Views"</h2>
-            <p>I love using Wayfarer! I get to find the cities with the highest buildings to jump off of!</p>
+            <p>I love using Wayfarer! I get to find the cities that have incredible views!</p>
           </div>
         </div>
       </div>
