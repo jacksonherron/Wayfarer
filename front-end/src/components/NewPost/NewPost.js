@@ -1,23 +1,30 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { withRouter } from 'react-router-dom';
 import { API_URL } from '../../constants';
+import './NewPost.css';
 
-class Login extends Component {
+class NewPost extends Component {
     state = {
         title: '',
         content: '',
-        errors: []
+        errors: [],
     };
 
     clearModal = () => {
-        const modal = document.getElementById('newPost');
+        const modal = document.getElementById('newPostModal');
+        const body = document.querySelector('.modal-open');
         const modalBackdrop = document.querySelector('.modal-backdrop');
         modal.classList.remove('show');
         modal.style.display = 'none';
         modal.removeAttribute('aria-modal');
+        modal.removeAttribute('aria-modal');
         modal.setAttribute('aria-hidden', true);
+        body.classList.remove('modal-open');
         modalBackdrop.parentNode.removeChild(modalBackdrop);
+        this.setState({
+            title: '',
+            content: ''
+        })
     }
 
     handleChange = event => {
@@ -37,30 +44,19 @@ class Login extends Component {
         axios.post(`${API_URL}/posts`, newPost, { withCredentials: true })
             .then(res => {
                 this.clearModal();
-                this.props.setCurrentUser(res.data.id);
+                this.props.pushNewPost(res.data.data);
             })
-            .catch(err => {
-                this.setState({ errors: err.response.data.errors });
-        });
+            .catch(err => console.log(err));
     };
 
 
     render() {
         return (
             <>
-                 <button className="btn btn-primary new-post-btn" data-toggle="modal" data-target="#newPostModal">+</button>
-                
+                <button className="btn btn-primary new-post-btn" data-toggle="modal" data-target="#newPostModal">+</button>
                 <div className="modal fade" id="newPostModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-centered" role="document">
                         <div className="modal-content">
-                            {this.state.errors && this.state.errors.map((e, i) => (
-                                <div className="alert alert-danger alert-dismissible fade show" style={{width: '100%'}} role="alert" key={i}>
-                                    {e.message}
-                                    <button type="button" className="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                            ))}
                             <div className="modal-header">
                                 <h5 className="modal-title" id="exampleModalLabel">New Post</h5>
                                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
@@ -79,7 +75,7 @@ class Login extends Component {
                                     </div>
                                 </form>
                             </div>
-                            <button onClick={this.handleSubmit} className="btn btn-primary">Login</button>
+                            <button onClick={this.handleSubmit} className="btn btn-primary">Submit</button>
                         </div>
                     </div>
                 </div>
@@ -88,4 +84,4 @@ class Login extends Component {
     };
 };
 
-export default withRouter(Login);
+export default NewPost;

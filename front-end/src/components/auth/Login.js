@@ -12,11 +12,13 @@ class Login extends Component {
 
     clearModal = () => {
         const modal = document.getElementById('loginModal');
+        const body = document.querySelector('.modal-open');
         const modalBackdrop = document.querySelector('.modal-backdrop');
         modal.classList.remove('show');
         modal.style.display = 'none';
         modal.removeAttribute('aria-modal');
         modal.setAttribute('aria-hidden', true);
+        body.classList.remove('modal-open');
         modalBackdrop.parentNode.removeChild(modalBackdrop);
     }
 
@@ -35,11 +37,11 @@ class Login extends Component {
         axios.post(`${API_URL}/auth/login`, userInfo, { withCredentials: true })
             .then(res => {
                 this.clearModal();
-                this.props.setCurrentUser(res.data.id);
-                this.props.history.push('/profile')
+                this.props.setCurrentUser(res.data.id, res.data.username);
+                this.props.history.push('/home')
             })
             .catch(err => {
-                this.setState({ errors: err.response.data.errors });
+                console.log(err)
         });
     };
 
@@ -51,7 +53,7 @@ class Login extends Component {
                     <span className="nav-link" data-toggle="modal" data-target="#loginModal" style={{ cursor: 'pointer'}}>Login</span>
                 </li>
                 
-                <div className="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal fade" id="loginModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-centered" role="document">
                         <div className="modal-content">
                             {this.state.errors && this.state.errors.map((e, i) => (

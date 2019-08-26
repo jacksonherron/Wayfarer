@@ -15,6 +15,7 @@ const userSchema = new Schema({
     profile_photo: {
         type: String,
         default: 'http://s3.amazonaws.com/nvest/Blank_Club_Website_Avatar_Gray.jpg'
+        
     },
     join_date: {
         type: Date,

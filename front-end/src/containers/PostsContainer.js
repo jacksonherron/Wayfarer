@@ -1,32 +1,72 @@
 import React, {Component} from 'react';
 import PostModel from '../models/PostModel';
-import NewPost from '../components/NewPost/NewPost'
-import Post from '../components/Post/Post'
+import CityModel from '../models/CityModel';
+import NewPost from '../components/NewPost/NewPost';
+import Post from '../components/Post/Post';
 
 class PostsContainer extends Component {
     state = {
-        posts: []
+        city_url: this.props.match.params.name,
+        city: null,
+        posts: [],
     };
 
-    componentDidUpdate() {
-        this.fetchData();
-        console.log("PostsContainer Props:", this.props);
+    componentDidMount = () => {
+        this.fetchPosts();
     };
 
-    fetchData = () => {
-        PostModel.index(this.props.city_id)
-            .then(res => (res))
-            .catch(err => (err));
+    pushNewPost = (post) => {
+        const posts = this.state.posts;
+        posts.push(post);
+        this.setState({ posts })
+    }
+
+    fetchPosts = () => {
+        let city_url = '';
+        if (this.props.match.params.name) {
+            city_url = this.props.match.params.name;
+        } else {
+            city_url = "sanfrancisco"
+        };
+        CityModel.getCity(city_url)
+            .then((res) => {
+                const city = res.data.data[0];
+                if (city) {
+                    PostModel.index(city)
+                    .then(res => {
+                        const posts = res.data.data;
+                        this.setState({
+                            city,
+                            posts,
+                        });
+                    });
+                };
+            });
     };
 
     render() {
-        return (
+        const cityFound = (
             <>
-                <NewPost city={this.props.city} />
-                {this.state.posts && this.state.posts.map((post, i) => (
-                    <Post key={i}/>
-                ))}
+            <div className="card" id="city-detail">
+                <h1>{this.state.city ? this.state.city.name : null}</h1>
+                <div>{this.state.city ? `${this.state.city.location[0]} N,  ${this.state.city.location[0]} E` : null}</div>
+                <img src={this.state.city ? this.state.city.image : null} alt="city"/>
+                <NewPost city={this.state.city} pushNewPost={this.pushNewPost}/>
+            </div>
+                { this.state.posts.map(post => <Post post={post} />) }
             </>
+        )
+
+        const cityNotFound = (
+            <div id="default-city-detail">
+
+            </div>
+        )
+
+        return (
+            <div id="posts-container">
+                { this.state.city ? cityFound : cityNotFound }
+            </div>
         );
     };
 };

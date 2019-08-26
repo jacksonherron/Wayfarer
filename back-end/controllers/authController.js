@@ -32,7 +32,7 @@ const register = (req, res) => {
                 }
 
                 db.User.create(newUser, (err, savedUser) => {
-                    if (err) return res.status(500).json({ status: 500, errors: [{message: err}] });
+                    if (err) return res.status(500).json({ status: 500, errors: [{message: 'Something went wrong. Please try again'}] });
                     res.status(201).json({ status: 201, message: 'success' });
                 });
             });
@@ -59,7 +59,7 @@ const login = (req, res) => {
         if (isMatch) {
             req.session.loggedIn = true;
             req.session.currentUser = { id: foundUser._id };
-            return res.status(200).json({ status: 200, message: 'Success', id: foundUser._id  });
+            return res.status(200).json({ status: 200, message: 'Success', id: foundUser._id, username: foundUser.username  });
         } else {
             return res.status(400).json({ status: 400, errors: [{message: 'Email or password is incorrect'}] });
         }

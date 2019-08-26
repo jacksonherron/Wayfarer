@@ -1,0 +1,29 @@
+.post-card {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    position: relative;
+}
+
+.post-card h4 {
+    margin: 0.25rem 0;
+}
+
+.post-user {
+    font-size: x-small;
+}
+
+.post-date {
+    font-size: xx-small;
+}
+
+.edit-post-btn {
+    position: absolute;
+    top: 0;
+    right: 0.5rem;
+}
+
+.delete-post-btn {
+    position: absolute;
+    top: 0;
+    right: 1.75rem;
+}
