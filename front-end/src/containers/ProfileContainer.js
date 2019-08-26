@@ -23,8 +23,6 @@ class ProfileContainer extends Component {
             .catch(err => console.log(err));
     };
 
-   
-  
 
 
 
