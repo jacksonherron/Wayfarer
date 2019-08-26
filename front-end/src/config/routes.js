@@ -4,6 +4,7 @@ import Landing from '../pages/Landing';
 // import Profile from '../pages/Profile';
 import Home from '../pages/Home';
 import ProfileContainer from '../containers/ProfileContainer';
+import Profile from '../pages/Profile'
 import NotFound from '../components/NotFound/NotFound';
 
 
@@ -22,7 +23,7 @@ const Routes = ({ currentUser, setCurrentUser }) => {
             <Route exact path='/' render={(props) => <Landing {...props} currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
             <PrivateRoute path='/home' component={ Home } />
             <PrivateRoute path='/profile' component={ ProfileContainer } />
-            <PrivateRoute path='/profile' component={ Profile } />
+            {/* <PrivateRoute path='/profile' component={ Profile } /> */}
             <Route path='*' component={NotFound}/>
         </Switch>
     );
