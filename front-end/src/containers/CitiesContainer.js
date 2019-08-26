@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CityModel from '../models/CityModel';
 import Cities from '../components/Cities/Cities';
+
 class CitiesContainer extends Component {
     state = {
         cities: []
@@ -25,7 +26,9 @@ class CitiesContainer extends Component {
     };
     render() {
         return (
-            this.state.cities.length && <Cities cities={this.state.cities} />
+            <div id="cities-container">
+                { this.state.cities.length ? <Cities cities={this.state.cities} /> : null }
+            </div>
         );
     };
 };

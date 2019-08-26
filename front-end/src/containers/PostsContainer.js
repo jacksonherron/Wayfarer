@@ -22,7 +22,13 @@ class PostsContainer extends Component {
     }
 
     fetchPosts = () => {
-        CityModel.getCity(this.state.city_url)
+        let city_url = '';
+        if (this.props.match.params.name) {
+            city_url = this.props.match.params.name;
+        } else {
+            city_url = "sanfrancisco"
+        };
+        CityModel.getCity(city_url)
             .then((res) => {
                 const city = res.data.data[0];
                 if (city) {
@@ -41,20 +47,24 @@ class PostsContainer extends Component {
     render() {
         const cityFound = (
             <>
+            <div className="card" id="city-detail">
+                <h1>{this.state.city ? this.state.city.name : null}</h1>
+                <div>{this.state.city ? `${this.state.city.location[0]} N,  ${this.state.city.location[0]} E` : null}</div>
+                <img src={this.state.city ? this.state.city.image : null} alt="city"/>
                 <NewPost city={this.state.city} pushNewPost={this.pushNewPost}/>
+            </div>
                 { this.state.posts.map(post => <Post post={post} />) }
             </>
         )
 
         const cityNotFound = (
-            <div className="card">
-                <div>You are on the home route or invalid city_url</div>
-                <div>New post button should not be displayed...</div>
+            <div id="default-city-detail">
+
             </div>
         )
 
         return (
-            <div className="split right">
+            <div id="posts-container">
                 { this.state.city ? cityFound : cityNotFound }
             </div>
         );

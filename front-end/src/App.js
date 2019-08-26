@@ -11,13 +11,15 @@ class App extends Component {
     currentUser: localStorage.getItem('uid')
   };
 
-  setCurrentUser = (userId) => {
-    localStorage.setItem('uid', userId)
-    this.setState({ currentUser: userId })
+  setCurrentUser = (userId, username) => {
+    localStorage.setItem('uid', userId);
+    localStorage.setItem('username', username);
+    this.setState({ currentUser: userId });
   }
 
   handleLogout = () => {
-    localStorage.removeItem('uid')
+    localStorage.removeItem('uid');
+    localStorage.removeItem('username');
     axios.post(`${API_URL}/auth/logout`, { withCredentials: true })
       .then(() => {
         this.setState( {currentUser: null });

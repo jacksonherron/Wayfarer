@@ -1,15 +1,23 @@
 import React from 'react';
+import './Post.css';
 
 const Post = ({post}) => {
+    const username = localStorage.getItem('username');
+
+
     return(
-        <div className="card">
-            <div><strong>Title:</strong> {post.title}</div>
-            <div><strong>Content:</strong> {post.content}</div>
-            <div><strong>Username:</strong> {post.user.username}</div>
-            <div><strong>Date Posted:</strong> { new Date(post.date_posted).toLocaleString() }</div>
-            <div><strong>City:</strong> {post.city.name}</div>
-            <br/>
-            <button>Delete</button>
+        <div className="card post-card">
+            <div className="post-user">{post.user.username}</div>
+            <div className="post-date">{ new Date(post.date_posted).toLocaleString() }</div>
+            <h4>{post.title}</h4>
+            <div className="post-content">{post.content}</div>
+            { post.user.username === username 
+                ? 
+                    <>
+                        <a className="delete-post-btn"><i className="far fa-edit"></i></a>
+                        <a className="edit-post-btn"><i className="far fa-trash-alt"></i></a>
+                    </>
+                : null }
         </div>
     );
 };

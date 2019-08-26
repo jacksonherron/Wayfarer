@@ -59,7 +59,7 @@ const login = (req, res) => {
         if (isMatch) {
             req.session.loggedIn = true;
             req.session.currentUser = { id: foundUser._id };
-            return res.status(200).json({ status: 200, message: 'Success', id: foundUser._id  });
+            return res.status(200).json({ status: 200, message: 'Success', id: foundUser._id, username: foundUser.username  });
         } else {
             return res.status(400).json({ status: 400, errors: [{message: 'Email or password is incorrect'}] });
         }
