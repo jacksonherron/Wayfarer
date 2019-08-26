@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { withRouter } from 'react-router-dom';
 import { API_URL } from '../../constants';
+import './NewPost.css';
 
-class Login extends Component {
+class NewPost extends Component {
     state = {
         title: '',
         content: '',
@@ -84,4 +84,4 @@ class Login extends Component {
     };
 };
 
-export default withRouter(Login);
+export default NewPost;

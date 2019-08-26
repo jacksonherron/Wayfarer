@@ -13,14 +13,11 @@ const links = {
 
 
 const Cities = (props) => {
-    console.log(props.cities[5].name)
-    console.log(props.cities)
-    
     return (
-        <div className="city-container">
+        <>
             {props.cities.map(city => (
-                <a href={`/home/${links[city.name]}`} key={city} className="city-card">
-                    <div className="card flex-row flex-wrap">
+                <a href={`/home/${links[city.name]}`} key={city}>
+                    <div className="card city-card flex-row flex-wrap">
                         <div className="card-header border-0">
                             <img className="city-image" src={city.image} alt={city.name} />
                         </div>
@@ -31,7 +28,7 @@ const Cities = (props) => {
                     </div>
                 </a>
             ))}
-        </div>
+        </>
     )
 }
 export default Cities;
