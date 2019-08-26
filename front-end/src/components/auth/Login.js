@@ -41,7 +41,8 @@ class Login extends Component {
                 this.props.history.push('/home')
             })
             .catch(err => {
-                this.setState({ errors: err.response.data.errors });
+                console.log(err)
+                // this.setState({ errors: err.response.data.errors });
         });
     };
 
@@ -53,7 +54,7 @@ class Login extends Component {
                     <span className="nav-link" data-toggle="modal" data-target="#loginModal" style={{ cursor: 'pointer'}}>Login</span>
                 </li>
                 
-                <div className="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal fade" id="loginModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-centered" role="document">
                         <div className="modal-content">
                             {this.state.errors && this.state.errors.map((e, i) => (

@@ -1,17 +1,50 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import Profile from '../pages/Profile';
+import { API_URL } from '../constants';
+
 
 class ProfileContainer extends Component {
     state = {
-        currentUser: this.props.currentUser
+        profile: {
+            username: '',
+            email: '',
+            profile_photo: '',
+            join_date: '',
+            location: '',
+        }
+        
     };
 
-    render() {
-        return(
-            <>
-                <h1>Profile Container</h1>
-            </>
-        );
+    componentDidMount() {
+        const userId = localStorage.getItem('uid');
+        axios.get(`${API_URL}/users/${userId}`, { withCredentials: true })
+            .then(res => this.setState({ profile: res.data.data }))
+            .catch(err => console.log(err));
     };
-};
+
+   
+  
+
+
+
+
+
+
+
+
+
+    render() {
+        return (
+            
+            <Profile profile={this.state.profile}  />
+            
+            
+            
+        )
+    }
+
+}
+
 
 export default ProfileContainer;

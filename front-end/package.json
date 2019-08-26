@@ -7,6 +7,7 @@
     "package.json": "^2.0.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-images-upload": "^1.2.7",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1"
   },
