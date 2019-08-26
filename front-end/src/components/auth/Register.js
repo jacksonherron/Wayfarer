@@ -47,7 +47,7 @@ class Register extends Component {
             .catch(err => {
                 this.setState({ errors: err.response.data.errors });
             });
-      };
+    };
 
     render() {
         return (

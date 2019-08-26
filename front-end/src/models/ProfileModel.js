@@ -9,11 +9,6 @@ class ProfileModel {
         const response = axios.get(`${endPoint}/${user._id}`);
         return response;
     };
-
-    static update = (user) => {
-        const response = axios.put(`${endPoint}/${user._id}`, user);
-        return response;
-    };
 };
 
 export default ProfileModel;

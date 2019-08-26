@@ -19,7 +19,7 @@ class Login extends Component {
         modal.removeAttribute('aria-modal');
         modal.removeAttribute('aria-modal');
         modal.setAttribute('aria-hidden', true);
-        body.classList.remove('modal-open')
+        body.classList.remove('modal-open');
         modalBackdrop.parentNode.removeChild(modalBackdrop);
         this.setState({
             title: '',
