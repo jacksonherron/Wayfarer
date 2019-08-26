@@ -12,11 +12,13 @@ class Login extends Component {
 
     clearModal = () => {
         const modal = document.getElementById('loginModal');
+        const body = document.querySelector('.modal-open');
         const modalBackdrop = document.querySelector('.modal-backdrop');
         modal.classList.remove('show');
         modal.style.display = 'none';
         modal.removeAttribute('aria-modal');
         modal.setAttribute('aria-hidden', true);
+        body.classList.remove('modal-open');
         modalBackdrop.parentNode.removeChild(modalBackdrop);
     }
 
@@ -36,7 +38,7 @@ class Login extends Component {
             .then(res => {
                 this.clearModal();
                 this.props.setCurrentUser(res.data.id);
-                this.props.history.push('/profile')
+                this.props.history.push('/home')
             })
             .catch(err => {
                 this.setState({ errors: err.response.data.errors });
