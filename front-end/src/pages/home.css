@@ -1,47 +1,69 @@
 html, body {
-    padding:0;
-    margin:0;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-  }
-  
-  h1 {
-    font-size: 4rem;
-    color: #fff;
-    position: absolute;
-    left: 50%;
-    top: 20%;
-    transform: translateX(-50%);
-    white-space: nowrap;
-  }
+  padding:0;
+  margin:0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
 
-  h4, p {
-    text-decoration: none;
-  }
-  
-  
-  .container {
-    position: relative;
+
+h4, p {
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--container-bg-color);
+}
+
+#home-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+#cities-container {
+  width: 45%;
+}
+
+#posts-container {
+  width: 55%;
+  padding: 0 1rem;
+}
+
+#city-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#city-detail img {
+  width: 90%;
+  border-radius: 4px;
+}
+
+#city-detail h1 {
+  color: #007bff;
+  margin: 0.25rem 0;
+}
+
+#city-detail div {
+  margin-bottom: 0.25rem;
+}
+
+#city-detail button {
+  margin: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+  #cities-container {
     width: 100%;
-    height: 100%;
-    background: var(--container-bg-color);
   }
   
-  .split {
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
+  #posts-container {
+    width: 100%;
+    padding: 0;
   }
-  
-  .split.left {
-    left:0;
-    background-color: lightgray;
-  }
-  
-  
-  .split.right {
-    right:0;
-    background-color: darkgrey;
-  }
+}
