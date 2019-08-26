@@ -17,8 +17,16 @@ const index = (req, res) => {
     })
 }
 
+const update = (req, res) => {
+    db.User.findByIdAndUpdate(req.params._id, req.body, { new: true }, (error, updatedUser) => {
+        if (error) return sendErrorResponse(res, error);
+        sendSuccessResponse(res, updatedUser);
+    });
+};
+
 
 module.exports = {
     show,
     index,
+    update
 }
