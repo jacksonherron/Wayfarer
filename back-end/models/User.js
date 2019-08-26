@@ -14,7 +14,7 @@ const userSchema = new Schema({
     },
     profile_photo: {
         type: String,
-        default: 'http://s3.amazonaws.com/nvest/Blank_Club_Website_Avatar_Gray.jpg'
+        default: 'https://cdn.pixabay.com/photo/2015/07/06/15/12/w-833386_960_720.png',
         
     },
     join_date: {

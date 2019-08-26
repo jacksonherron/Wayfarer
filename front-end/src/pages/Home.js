@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import CityModel from '../models/CityModel'
-import Cities from '../components/Cities/Cities';
+import CitiesContainer from '../containers/CitiesContainer';
 import PostsContainer from '../containers/PostsContainer';
 import './home.css'
 
@@ -26,7 +26,7 @@ class Home extends Component {
         return (
             <>
                 <div className="split left">
-                    <Cities selectCity={this.selectCity} cities={this.state.cities} />
+                    <CitiesContainer cities={this.state.cities} />
                 </div>
                 <Switch className="split right">
                     <Route exact path='/home' component={ PostsContainer } cities={this.state.cities}></Route>
