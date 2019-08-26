@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import Landing from '../pages/Landing';
-// import Profile from '../pages/Profile';
+import Profile from '../pages/Profile';
 import Home from '../pages/Home';
 import NotFound from '../components/NotFound/NotFound';
 
