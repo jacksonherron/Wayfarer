@@ -6,9 +6,9 @@ const authRequired = require('../middleware/authRequired');
 
 router.get('/', ctrl.city.index);
 router.get('/:name', ctrl.city.show);
-router.post('/', ctrl.city.create);
-router.post('/:_id', ctrl.city.update);
-router.delete('/:_id', ctrl.city.del);
+router.post('/', authRequired, ctrl.city.create);
+router.post('/:_id', authRequired, ctrl.city.update);
+router.delete('/:_id', authRequired, ctrl.city.del);
 
 
 module.exports = router;
