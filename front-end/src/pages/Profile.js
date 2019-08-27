@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import ProfileContainer from '../containers/ProfileContainer';
 import { API_URL } from '../constants';
-import ProfileModel from '../models/ProfileModel';
+// import ProfileModel from '../models/ProfileModel';
 
 
 class Profile extends Component {
@@ -14,6 +14,7 @@ class Profile extends Component {
             location: '',
     };
     
+
 
     clearModal = () => {
         const modal = document.getElementById('registerModal');
