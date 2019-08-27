@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
 import PostModel from '../models/PostModel';
-import CityModel from '../models/CityModel';
 import NewPost from '../components/NewPost/NewPost';
 import Post from '../components/Post/Post';
 
 const links = {
-    "": "San Francisco",
     "london": "London",
     "sydney": "Sydney",
     "gibraltar": "Gibraltar",
@@ -16,23 +14,18 @@ const links = {
 
 class PostsContainer extends Component {
     state = {
-        city_url: links[this.props.match.params.name],
+        city_name: links[this.props.match.params.name] || "San Francisco",
         city: null,
         posts: [],
+        postsRetrieved: false,
     };
-
-    componentDidMount = () => {
-        console.log("Mounted");
-        console.log(this.state)
-    }
     
     componentDidUpdate = () => {
-        console.log('Updated')
         this.fetchPosts();
     };
 
     shouldComponentUpdate = (nextState, nextProps) => {
-        return( this.state.city != nextState.city);
+        return( !this.state.postsRetrieved );
     }
 
     pushNewPost = (post) => {
@@ -43,13 +36,14 @@ class PostsContainer extends Component {
 
     fetchPosts = () => {
         if (this.props.cities.length) {
-            let selectedCity = this.props.cities.filter(city => city.name === this.state.city_url)
+            let selectedCity = this.props.cities.filter(city => city.name === this.state.city_name)
             PostModel.index(selectedCity[0])
                 .then(res => {
                     const posts = res.data.data;
                     this.setState({
                         city: selectedCity[0],
                         posts,
+                        postsRetrieved: true
                     });
             });
         };
