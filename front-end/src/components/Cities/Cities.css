@@ -1,8 +1,8 @@
 .city-image {
-  height: 75px;
-  width: 75px;
+  height: 100px;
+  width: 100px;
   object-fit: cover;
-  border-radius: 2px;
+
 }
 
 .city-card {

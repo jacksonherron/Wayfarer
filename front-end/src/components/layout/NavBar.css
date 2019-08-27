@@ -1,7 +1,7 @@
 .navbar {
     background-color: rgb(34, 34, 36) !important;
-    /* position: fixed;
-    z-index: 100; */
+    /* position: fixed; */
+    /* z-index: 100; */
 }
 
 .navbar-nav {
@@ -12,7 +12,7 @@
 
 .navbar-brand {
     font-weight: bold;
-    line-height: 1.5m;
+    line-height: 1.5em;
     font-size: 2em;
 }
 
@@ -22,3 +22,9 @@
 .nav-link:hover {
     color:white !important;
 }
+
+.dropdown-toggle {
+    color: white;
+    padding-bottom: 1rem;
+}
+

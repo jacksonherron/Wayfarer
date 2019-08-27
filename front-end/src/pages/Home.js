@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import CityModel from '../models/CityModel'
 import CitiesContainer from '../containers/CitiesContainer';
 import PostsContainer from '../containers/PostsContainer';
+import Footer from '../components/layout/Footer';
 // import NotFound from '../components/NotFound/NotFound';
 import './Home.css'
 
@@ -40,10 +41,7 @@ class Home extends Component {
                     <Route path='/home/:name' render={(props) => <PostsContainer {...props} cities={this.state.cities} />} />
 
                 </Switch>
-
-                
-
-                
+                <Footer />
             </div>
         );
     };
