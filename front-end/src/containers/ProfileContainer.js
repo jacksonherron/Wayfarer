@@ -11,42 +11,39 @@ const ProfileContainer = ( {user: { username , email, profile_photo, join_date, 
 
 
     <>
-    
-    
-
-    <div className="modal fade" id="registerModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div className="modal-dialog modal-dialog-centered" role="document">
-                        <div className="modal-content">
-                            <div className="modal-header">
-                            <h5 className="modal-title" id="exampleModalLabel">Edit Profile</h5>
-                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            </div>
-                            <div className="modal-body">
-                                <form >
-                                    <div className="form-group">
-                                        <label htmlFor="Username">Username</label>
-                                        <input type="text" id="username" name="username" value={username} onChange={onChange} className="form-control form-control-lg" />
-                                    </div>
-                                    <div>
-                                        <label htmlFor="email-register">Email</label>
-                                        <input type="email" id="email" name="email" value={email} onChange={onChange} className="form-control form-control-lg"/>
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="Location">Location</label>
-                                        <input type="text" id="edit" name="location" value={location} onChange={onChange} className="form-control form-control-lg" />
-                                    </div>
-                                    <div className="form-group">
-                                        <label htmlFor="text">Photo</label>
-                                        <input type="text" id="edit-photo" name="profile_photo" value={profile_photo} onChange={onChange} className="form-control form-control-lg" />
-                                    </div>
-                                </form>
-                            </div>
-                            <button onClick={onSubmit} className="btn btn-primary">Edit</button>
-                        </div>
+        <div className="modal fade" id="registerModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal-dialog modal-dialog-centered" role="document">
+                <div className="modal-content">
+                    <div className="modal-header">
+                    <h5 className="modal-title" id="exampleModalLabel">Edit Profile</h5>
+                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                     </div>
-                </div> 
+                    <div className="modal-body">
+                        <form >
+                            <div className="form-group">
+                                <label htmlFor="Username">Username</label>
+                                <input type="text" id="username" name="username" value={username} onChange={onChange} className="form-control form-control-lg" />
+                            </div>
+                            <div>
+                                <label htmlFor="email-register">Email</label>
+                                <input type="email" id="email" name="email" value={email} onChange={onChange} className="form-control form-control-lg"/>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="Location">Location</label>
+                                <input type="text" id="edit" name="location" value={location} onChange={onChange} className="form-control form-control-lg" />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="text">Photo</label>
+                                <input type="text" id="edit-photo" name="profile_photo" value={profile_photo} onChange={onChange} className="form-control form-control-lg" />
+                            </div>
+                        </form>
+                    </div>
+                    <button onClick={onSubmit} className="btn btn-primary">Edit</button>
+                </div>
+            </div>
+        </div> 
 
     <div className="container emp-profile">
         <form  method="post" encType="multipart/form-data" >
