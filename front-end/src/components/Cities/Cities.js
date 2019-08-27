@@ -18,7 +18,7 @@ const Cities = (props) => {
         <>
             {props.cities.map((city, i) => (
                 <Link to={`/home/${links[city.name]}`} key={i}>
-                    <div className="card city-card flex-row flex-wrap city-collapse show">
+                    <div className="card city-card flex-row flex-wrap city-collapse show" activeClassName="is-active">
                         <div className="card-header border-0">
                             <img className="city-image" src={city.image} alt={city.name} />
                         </div>
