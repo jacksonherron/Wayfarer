@@ -1,7 +1,7 @@
 .navbar {
     background-color: rgb(34, 34, 36) !important;
-    position: fixed;
-    z-index: 100;
+    /* position: fixed;
+    z-index: 100; */
 }
 
 .navbar-nav {
