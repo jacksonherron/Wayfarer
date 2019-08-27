@@ -3,8 +3,7 @@ import { Widget } from "@uploadcare/react-widget";
 import './ProfileContainer.css'
 
 
-    
-    
+
 
 
 const ProfileContainer = ( { profile: { username , email, profile_photo, join_date, location } } ) => {
@@ -28,6 +27,8 @@ const ProfileContainer = ( { profile: { username , email, profile_photo, join_da
                             <label htmlFor='file'>Your file:</label>{' '}
                             <Widget publicKey='ee98c7e89f4317e73f18' id='file' />
                                 </div>
+                                
+    
             
             
                                 </div>
@@ -95,6 +96,8 @@ const ProfileContainer = ( { profile: { username , email, profile_photo, join_da
 </form>      
     
 </div>
+
+
 
      </>
 );

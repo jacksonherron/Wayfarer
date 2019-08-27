@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import ProfileContainer from '../containers/ProfileContainer';
 import { API_URL } from '../constants';
+import Footer from '../components/layout/Footer'
 
 
 
@@ -35,8 +36,10 @@ class Profile extends Component {
 
     render() {
         return (
-        
+            <>
             <ProfileContainer profile={this.state.profile}  />
+            <Footer />
+            </>
             
             
             

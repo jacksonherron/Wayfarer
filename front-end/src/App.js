@@ -6,7 +6,6 @@ import NavBar from './components/layout/NavBar';
 import Routes from './config/routes'
 import { API_URL } from './constants'
 
-
 class App extends Component {
   state = { 
     currentUser: localStorage.getItem('uid')
