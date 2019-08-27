@@ -1,35 +1,14 @@
-import React, { Component } from 'react';
-import CityModel from '../models/CityModel';
+import React from 'react';
 import Cities from '../components/Cities/Cities';
+import './CitiesContainer.css'
 
-class CitiesContainer extends Component {
-    state = {
-        cities: []
-    };
-    componentDidMount = () => {
-        this.fetchCities();
-        
-    };
-    fetchCities = () => {
-        CityModel.getAll()
-            .then((res) => {
-                const cities = res.data.data;
-                if (cities) {
-                    CityModel.getAll()
-                        .then(res => {
-                            this.setState({
-                                cities,
-                            });
-                        });
-                };
-            });
-    };
-    render() {
-        return (
+const CitiesContainer = ({cities}) => {
+    return (
+        <>
             <div id="cities-container">
-                { this.state.cities.length ? <Cities cities={this.state.cities} /> : null }
+                { cities ? <Cities cities={cities} /> : null }
             </div>
-        );
-    };
+        </>
+    );
 };
 export default CitiesContainer;

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const ctrl = require('../controllers');
-// const authRequired = require('../middleware/authRequired');
+const authRequired = require('../middleware/authRequired');
 
 router.get('/', ctrl.post.index);
 router.get('/:_id', ctrl.post.show);

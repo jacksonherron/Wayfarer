@@ -1,10 +1,11 @@
 // import React, { Component } from 'react';
 
 // class ProfileForm extends Component {
-//     constructor() {
-//         super();
-//         this.state = {
+//     state = {
 //             location: '',
+//             username: '',
+//             email: '',
+//             profile_photo: '',
 //         };
 //     };
 
@@ -17,10 +18,9 @@
     
 //     onSubmit = (event) => {
 //         event.preventDefault();
-//         const location = this.props.location;
-//         // location.body = this.state.location;
+//         const profile = this.state;
 //         this.props.updateLocation(location);
-//         this.setState({ location: '' });
+//         this.setState({ : '' });
 //         this.props.toggleBodyForm();
 //     };
 
