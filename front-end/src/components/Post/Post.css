@@ -4,6 +4,11 @@
     position: relative;
 }
 
+.card h1 {
+    color: black !important;
+    font-size: 3em;
+}
+
 .post-card h4 {
     margin: 0.25rem 0;
 }
@@ -17,27 +22,41 @@
 }
 
 .delete-post-btn {
+    background-color: rgb(190, 63, 55) !important;
+    border: 2px solid rgb(34, 34, 36);
+    color: white;
     position: absolute;
     top: 0.25rem;
     right: 0.25rem;
     border-radius: 2px;
+    font-size: 1.5em;
 }
 
 .edit-post-btn {
     background-color: rgb(190, 63, 55) !important;
-    border-color: #007bff;
+    border: 2px solid rgb(34, 34, 36);
+    color: white;
     position: absolute;
     top: 0.25rem;
-    right: 2.5rem;
+    right: 3rem;
     border-radius: 2px;
+    font-size: 1.5em;
 }
 
 .save-post-btn {
     background-color: rgb(190, 63, 55) !important;
-    border-color: #007bff;
+    border-color: rgb(34, 34, 36);
     margin: 1rem auto;
     border-radius: 2px;
     padding: 0.5rem;
     color: white;
     font-weight: 500;
+}
+
+.edit-post-btn:hover {
+    background-color: rgb(34, 34, 36) !important;
+}
+
+.delete-post-btn:hover {
+    background-color: rgb(34, 34, 36) !important;
 }
