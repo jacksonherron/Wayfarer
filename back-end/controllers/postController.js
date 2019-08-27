@@ -8,7 +8,7 @@ const index = (req, res) => {
             sendSuccessResponse(res, foundAllPosts);
         });
     } else {
-        db.Post.find({}).populate('user city', '-password -_id -__v' ).exec({password: 0, _v:0}, (error, foundAllPosts) => {
+        db.Post.find({}).populate('user city', '-password -__v' ).exec({password: 0, _v:0}, (error, foundAllPosts) => {
             if (error) return sendErrorResponse(res, error);
             sendSuccessResponse(res, foundAllPosts);
         });

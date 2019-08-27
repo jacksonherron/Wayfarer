@@ -16,14 +16,28 @@
     font-size: xx-small;
 }
 
-.edit-post-btn {
-    position: absolute;
-    top: 0;
-    right: 0.5rem;
-}
-
 .delete-post-btn {
     position: absolute;
-    top: 0;
-    right: 1.75rem;
+    top: 0.25rem;
+    right: 0.25rem;
+    border-radius: 2px;
+}
+
+.edit-post-btn {
+    background-color: rgb(190, 63, 55) !important;
+    border-color: #007bff;
+    position: absolute;
+    top: 0.25rem;
+    right: 2.5rem;
+    border-radius: 2px;
+}
+
+.save-post-btn {
+    background-color: rgb(190, 63, 55) !important;
+    border-color: #007bff;
+    margin: 1rem auto;
+    border-radius: 2px;
+    padding: 0.5rem;
+    color: white;
+    font-weight: 500;
 }

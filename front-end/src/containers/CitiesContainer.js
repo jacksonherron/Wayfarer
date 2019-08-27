@@ -1,18 +1,14 @@
-import React, { Component } from 'react';
-import CityModel from '../models/CityModel';
+import React from 'react';
 import Cities from '../components/Cities/Cities';
+import './CitiesContainer.css'
 
-class CitiesContainer extends Component {
-    state = {
-        cities: []
-    };
-
-    render() {
-        return (
+const CitiesContainer = ({cities}) => {
+    return (
+        <>
             <div id="cities-container">
-                { this.props.cities ? <Cities cities={this.props.cities} /> : null }
+                { cities ? <Cities cities={cities} /> : null }
             </div>
-        );
-    };
+        </>
+    );
 };
 export default CitiesContainer;
