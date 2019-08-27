@@ -11,10 +11,9 @@ class Post extends Component {
 
 
     clearModal = () => {
-        const modal = document.getElementById(`postModal-${this.props.post._id}`);
-        // const body = document.querySelector(`.modal-open`);
+        // const modal = document.getElementById(`postModal-${this.props.post._id}`);
+        // const body = document.querySelectorAll(`.modal-open`);
         // const modalBackdrop = document.querySelectorAll(`.modal-backdrop`);
-        // console.log(modal, body, modalBackdrop)
         // modal.classList.remove('show');
         // modal.style.display = 'none';
         // modal.removeAttribute('aria-modal');
@@ -58,7 +57,6 @@ class Post extends Component {
     render() {
         const { post } = this.props;
         const username = localStorage.getItem('username');
-        console.log({post})
         return(
             <div className="card post-card">
                 <div className="post-user">{post.user.username}</div>

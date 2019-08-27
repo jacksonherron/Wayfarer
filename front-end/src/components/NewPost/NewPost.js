@@ -12,21 +12,21 @@ class NewPost extends Component {
     };
 
     clearModal = () => {
-        const modal = document.getElementById('newPostModal');
-        const body = document.querySelector('.modal-open');
-        const modalBackdrop = document.querySelector('.modal-backdrop');
-        modal.classList.remove('show');
-        modal.style.display = 'none';
-        modal.removeAttribute('aria-modal');
-        modal.removeAttribute('aria-modal');
-        modal.setAttribute('aria-hidden', true);
-        body.classList.remove('modal-open');
-        modalBackdrop.parentNode.removeChild(modalBackdrop);
-        this.setState({
-            title: '',
-            content: '',
-            image: '',
-        })
+        // const modal = document.getElementById('newPostModal');
+        // const body = document.querySelector('.modal-open');
+        // const modalBackdrop = document.querySelector('.modal-backdrop');
+        // modal.classList.remove('show');
+        // modal.style.display = 'none';
+        // modal.removeAttribute('aria-modal');
+        // modal.removeAttribute('aria-modal');
+        // modal.setAttribute('aria-hidden', true);
+        // body.classList.remove('modal-open');
+        // modalBackdrop.parentNode.removeChild(modalBackdrop);
+        // this.setState({
+        //     title: '',
+        //     content: '',
+        //     image: '',
+        // })
     }
 
     handleChange = event => {
@@ -57,7 +57,7 @@ class NewPost extends Component {
         return (
             <>
                 <button className="btn btn-primary new-post-btn" data-toggle="modal" data-target="#newPostModal">+</button>
-                <div className="modal fade" id="newPostModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal fade" id="newPostModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-centered" role="document">
                         <div className="modal-content">
                             <div className="modal-header">
@@ -79,7 +79,7 @@ class NewPost extends Component {
                                     
                                 </form>
                             </div>
-                            <button onClick={this.handleSubmit} className="btn btn-primary">Submit</button>
+                            <button onClick={this.handleSubmit} type="button" data-dismiss="modal" aria-label="Close" className="btn btn-primary">Submit</button>
                         </div>
                     </div>
                 </div>

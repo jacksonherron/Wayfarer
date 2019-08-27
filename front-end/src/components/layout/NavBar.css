@@ -1,5 +1,7 @@
 .navbar {
-    background-color: black !important;
+    background-color: rgb(34, 34, 36) !important;
+    /* position: fixed; */
+    /* z-index: 100; */
 }
 
 .navbar-nav {
@@ -7,3 +9,22 @@
     display: flex;
     justify-content: flex-end;
 }
+
+.navbar-brand {
+    font-weight: bold;
+    line-height: 1.5em;
+    font-size: 2em;
+}
+
+.nav-link {
+    text-transform: uppercase;
+}
+.nav-link:hover {
+    color:white !important;
+}
+
+.dropdown-toggle {
+    color: white;
+    padding-bottom: 1rem;
+}
+

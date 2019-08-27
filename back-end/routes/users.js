@@ -8,7 +8,7 @@ const ctrl = require('../controllers');
 // Get User Profile
 router.get('/:_id', ctrl.users.show);
 router.get('/', ctrl.users.index);
-router.put('/:_id', authRequired,  ctrl.users.update);
+router.put('/:_id', ctrl.users.update);
 
 
 
