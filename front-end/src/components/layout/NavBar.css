@@ -1,9 +1,24 @@
 .navbar {
-    background-color: black !important;
+    background-color: rgb(34, 34, 36) !important;
+    position: fixed;
+    z-index: 100;
 }
 
 .navbar-nav {
     width: 100%;
     display: flex;
     justify-content: flex-end;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    line-height: 1.5m;
+    font-size: 2em;
+}
+
+.nav-link {
+    text-transform: uppercase;
+}
+.nav-link:hover {
+    color:white !important;
 }

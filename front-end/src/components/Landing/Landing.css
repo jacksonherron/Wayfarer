@@ -1,12 +1,13 @@
 
 .landing {
     margin-top: 100px;
-    background-color: #D2D4D6 !important;
+    background-color: white !important;
     color: white;
+    text-align: center;
 }
 
 body {
-    background-color: #D2D4D6;
+    background-color: white;
 }
 
 
@@ -16,6 +17,10 @@ body {
 
 .landing p {
     color: black;
+}
+
+.rounded-circle {
+    text-align: center;
 }
 
 .btn li {
@@ -28,8 +33,15 @@ body {
     margin: 30px;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 40px;
+    border-radius: 15px;
+    border: 2px solid rgb(34, 34, 36) !important;
+    text-transform: uppercase;
     background-color: rgb(190, 63, 55) !important;
+}
+
+.btn:hover {
+    color: white;
+    background-color: rgb(34, 34, 36) !important;
 }
 
 @media only screen 
