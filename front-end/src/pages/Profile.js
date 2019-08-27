@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import ProfileContainer from '../containers/ProfileContainer';
 import { API_URL } from '../constants';
-import ProfileModel from '../models/ProfileModel';
+// import ProfileModel from '../models/ProfileModel';
 
 
 class Profile extends Component {
@@ -14,6 +14,7 @@ class Profile extends Component {
             location: '',
     };
     
+
 
     clearModal = () => {
         const modal = document.getElementById('registerModal');
@@ -29,7 +30,7 @@ class Profile extends Component {
 
     updateProfile = () => {
         const userId = localStorage.getItem('uid');
-        axios.put(`${API_URL}/users/${userId}`,this.state).then(
+        axios.put(`${API_URL}/users/${userId}`, this.state, { withCredentials: true }).then(
             res => {
             this.clearModal();
             }
@@ -45,7 +46,6 @@ class Profile extends Component {
 
     componentDidMount() {
         const userId = localStorage.getItem('uid');
-        console.log(userId)
         axios.get(`${API_URL}/users/${userId}`, { withCredentials: true })
             .then(res => this.setState(res.data.data ))
             .catch(err => console.log(err));
@@ -53,7 +53,6 @@ class Profile extends Component {
 
 
     render() {
-        console.log(this.state)
         return (
             
             <ProfileContainer user={this.state} onSubmit={this.updateProfile} onChange={this.onChange}  />

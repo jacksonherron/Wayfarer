@@ -6,7 +6,7 @@ const endPoint = `${API_URL}/users`;
 class ProfileModel {
 
     static show = (user) => {
-        const response = axios.get(`${endPoint}/${user._id}`);
+        const response = axios.get(`${endPoint}/${user._id}`, { withCredentials: true });
         return response;
     };
 };

@@ -12,3 +12,8 @@
 .card-header {
   padding: 0.5rem;
 }
+
+.is-active > div {
+  background-color: rgb(190, 63, 55)  !important;
+  color: white;
+}

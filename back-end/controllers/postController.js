@@ -2,14 +2,13 @@ const db = require('../models');
 const { sendErrorResponse, sendSuccessResponse } = require('./response') 
 
 const index = (req, res) => {
-    console.log(req.query.city)
     if (req.query.city) {
         db.Post.find({city: req.query.city}).populate('user city', '-password -_id -__v' ).exec({password: 0, _v:0}, (error, foundAllPosts) => {
             if (error) return sendErrorResponse(res, error);
             sendSuccessResponse(res, foundAllPosts);
         });
     } else {
-        db.Post.find({}).populate('user city', '-password -_id -__v' ).exec({password: 0, _v:0}, (error, foundAllPosts) => {
+        db.Post.find({}).populate('user city', '-password -__v' ).exec({password: 0, _v:0}, (error, foundAllPosts) => {
             if (error) return sendErrorResponse(res, error);
             sendSuccessResponse(res, foundAllPosts);
         });
