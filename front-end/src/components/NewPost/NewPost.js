@@ -8,6 +8,7 @@ class NewPost extends Component {
         title: '',
         content: '',
         errors: [],
+        image: '',
     };
 
     clearModal = () => {
@@ -23,7 +24,8 @@ class NewPost extends Component {
         modalBackdrop.parentNode.removeChild(modalBackdrop);
         this.setState({
             title: '',
-            content: ''
+            content: '',
+            image: '',
         })
     }
 
@@ -38,7 +40,8 @@ class NewPost extends Component {
             user: localStorage.getItem('uid'),
             city: this.props.city,
             title: this.state.title,
-            content: this.state.content
+            content: this.state.content,
+            image: this.state.image
         }
 
         axios.post(`${API_URL}/posts`, newPost, { withCredentials: true })
@@ -73,6 +76,7 @@ class NewPost extends Component {
                                         <label htmlFor="content">Content</label>
                                         <textarea id="content" name="content" value={this.state.content} onChange={this.handleChange} className="form-control" rows="3"></textarea>
                                     </div>
+                                    
                                 </form>
                             </div>
                             <button onClick={this.handleSubmit} className="btn btn-primary">Submit</button>
