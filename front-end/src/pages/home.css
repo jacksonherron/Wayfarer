@@ -22,6 +22,7 @@ h4, p {
   display: flex;
   flex-wrap: wrap;
   padding-top: 1rem;
+  padding-bottom: 3rem;
 }
 
 #cities-container {
@@ -60,10 +61,6 @@ h4, p {
 
 @media only screen and (max-width: 768px) {
   #cities-container {
-    width: 100%;
-  }
-
-  #cities-container .card-header{
     display: none;
   }
   

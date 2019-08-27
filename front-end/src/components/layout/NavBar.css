@@ -22,3 +22,9 @@
 .nav-link:hover {
     color:white !important;
 }
+
+.dropdown-toggle {
+    color: white;
+    padding-bottom: 1rem;
+}
+

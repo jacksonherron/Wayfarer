@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import ProfileContainer from '../containers/ProfileContainer';
+import Footer from '../components/layout/Footer';
 import { API_URL } from '../constants';
 // import ProfileModel from '../models/ProfileModel';
 
@@ -60,11 +61,10 @@ class Profile extends Component {
 
     render() {
         return (
-            
-            <ProfileContainer user={this.state} onSubmit={this.updateProfile}  onChange={this.onChange}  />
-            
-            
-            
+            <>
+                <ProfileContainer user={this.state} onSubmit={this.updateProfile}  onChange={this.onChange}  />
+                <Footer />
+            </>
         )
     }
 
