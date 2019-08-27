@@ -55,6 +55,7 @@ const ProfileContainer = ( {user: { username , email, profile_photo, join_date, 
                 <div className="col-md-4">
                     <div className="profile-img">
                         <img src={profile_photo} alt="user"/>
+
                             <div className="file btn btn-lg btn-primary">
                                 Change Photo
                                 
@@ -67,6 +68,7 @@ const ProfileContainer = ( {user: { username , email, profile_photo, join_date, 
 
                                 </div>
                                 
+
                     </div>
                 </div>
             <div className="col-md-6">

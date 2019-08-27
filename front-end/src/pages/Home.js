@@ -14,9 +14,9 @@ class Home extends Component {
     
     fetchCities = () => {
         CityModel.getAll()
-            .then(res => this.setState({
-                cities: res.data.data
-            }))
+            .then(res => {
+                this.setState({ cities: res.data.data })
+            })
             .catch(err => console.log(err));
     };
 
@@ -33,8 +33,12 @@ class Home extends Component {
                 </>
             
                 <Switch>
-                     <Route exact path='/home' component={ PostsContainer } cities={this.state.cities} />
-                    <Route path='/home/:name' component={ PostsContainer } cities={this.state.cities} />
+
+                     
+
+                    <Route exact path='/home' render={(props) => <PostsContainer {...props} cities={this.state.cities} /> } />
+                    <Route path='/home/:name' render={(props) => <PostsContainer {...props} cities={this.state.cities} />} />
+
                 </Switch>
 
                 
