@@ -1,5 +1,4 @@
 import React from 'react';
-import { Widget } from "@uploadcare/react-widget";
 import './ProfileContainer.css'
 
 
