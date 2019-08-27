@@ -25,17 +25,18 @@ const NavBar = ({ logout, currentUser, setCurrentUser }) => {
     return (
         <nav className="navbar navbar-expand-md navbar-dark bg-dark">
             <Link className="navbar-brand" to="/"><i className="fas fa-city"></i>  Wayfarer</Link>
-            <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cities</a>
-                <div className="dropdown-menu" aria-labelledby="dropdown04">
-                <a className="dropdown-item" href="/home/sanfrancisco">San Francisco</a>
-                <a className="dropdown-item" href="/home/seattle">Seattle</a>
-                <a className="dropdown-item" href="/home/tokyo">Tokyo</a>
-                <a className="dropdown-item" href="/home/london">London</a>
-                <a className="dropdown-item" href="/home/gibraltar">Gibraltar</a>
-                <a className="dropdown-item" href="/home/sydney">Sydney</a>
-                </div>
-            </li>
+            { currentUser && (<li className="nav-item dropdown">
+                    <a className="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cities</a>
+                    <div className="dropdown-menu" aria-labelledby="dropdown04">
+                    <a className="dropdown-item" href="/home/sanfrancisco">San Francisco</a>
+                    <a className="dropdown-item" href="/home/seattle">Seattle</a>
+                    <a className="dropdown-item" href="/home/tokyo">Tokyo</a>
+                    <a className="dropdown-item" href="/home/london">London</a>
+                    <a className="dropdown-item" href="/home/gibraltar">Gibraltar</a>
+                    <a className="dropdown-item" href="/home/sydney">Sydney</a>
+                    </div>
+                </li>
+            )}
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
