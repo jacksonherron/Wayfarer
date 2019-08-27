@@ -1,5 +1,6 @@
 import React from 'react';
 import './Cities.css';
+import { Link } from 'react-router-dom';
 
 
 const links = {
@@ -16,7 +17,7 @@ const Cities = (props) => {
     return (
         <>
             {props.cities.map(city => (
-                <a href={`/home/${links[city.name]}`} key={city}>
+                <Link to={`/home/${links[city.name]}`} key={city}>
                     <div className="card city-card flex-row flex-wrap">
                         <div className="card-header border-0">
                             <img className="city-image" src={city.image} alt={city.name} />
@@ -26,7 +27,7 @@ const Cities = (props) => {
                         </div>
                         <div className="w-100"></div>
                     </div>
-                </a>
+                </Link>
             ))}
         </>
     )
