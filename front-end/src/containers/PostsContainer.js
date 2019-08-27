@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import PostModel from '../models/PostModel';
 import NewPost from '../components/NewPost/NewPost';
 import Post from '../components/Post/Post';
+import axios from 'axios';
+import {API_URL} from '../constants';
+
 
 const links = {
     "london": "London",
@@ -23,6 +26,8 @@ class PostsContainer extends Component {
     componentDidUpdate = () => {
         this.fetchPosts();
     };
+    
+
 
     shouldComponentUpdate = (nextState, nextProps) => {
         return( !this.state.postsRetrieved );
@@ -50,6 +55,11 @@ class PostsContainer extends Component {
     };
 
     render() {
+        const id = this.state.posts[0]
+
+        if (this.state.posts.length) {
+            console.log(id._id)
+        }
         const cityFound = (
             <>
             <div className="card" id="city-detail">
@@ -58,7 +68,7 @@ class PostsContainer extends Component {
                 <img src={this.state.city ? this.state.city.image : null} alt="city"/>
                 <NewPost city={this.state.city} pushNewPost={this.pushNewPost}/>
             </div>
-                { this.state.posts.map(post => <Post post={post} />) }
+                { this.state.posts.map(post => <Post onChangePost={this.onChangePost} updatePost={this.updatePost} post={post} currentPost={this.currentPost} fetchPosts={this.fetchPosts}/>) }
             </>
         )
 
