@@ -6,28 +6,11 @@ class CitiesContainer extends Component {
     state = {
         cities: []
     };
-    componentDidMount = () => {
-        this.fetchCities();
-        
-    };
-    fetchCities = () => {
-        CityModel.getAll()
-            .then((res) => {
-                const cities = res.data.data;
-                if (cities) {
-                    CityModel.getAll()
-                        .then(res => {
-                            this.setState({
-                                cities,
-                            });
-                        });
-                };
-            });
-    };
+
     render() {
         return (
             <div id="cities-container">
-                { this.state.cities.length ? <Cities cities={this.state.cities} /> : null }
+                { this.props.cities ? <Cities cities={this.props.cities} /> : null }
             </div>
         );
     };

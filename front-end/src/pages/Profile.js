@@ -29,7 +29,7 @@ class Profile extends Component {
 
     updateProfile = () => {
         const userId = localStorage.getItem('uid');
-        axios.put(`${API_URL}/users/${userId}`,this.state).then(
+        axios.put(`${API_URL}/users/${userId}`, this.state, { withCredentials: true }).then(
             res => {
             this.clearModal();
             }
@@ -45,7 +45,6 @@ class Profile extends Component {
 
     componentDidMount() {
         const userId = localStorage.getItem('uid');
-        console.log(userId)
         axios.get(`${API_URL}/users/${userId}`, { withCredentials: true })
             .then(res => this.setState(res.data.data ))
             .catch(err => console.log(err));
@@ -53,7 +52,6 @@ class Profile extends Component {
 
 
     render() {
-        console.log(this.state)
         return (
             
             <ProfileContainer user={this.state} onSubmit={this.updateProfile} onChange={this.onChange}  />
