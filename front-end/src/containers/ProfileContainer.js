@@ -1,4 +1,5 @@
 import React from 'react';
+import { Widget } from "@uploadcare/react-widget";
 import './ProfileContainer.css'
 
 
@@ -6,7 +7,14 @@ const ProfileContainer = ( {user: { username , email, profile_photo, join_date, 
     console.log(username , email, profile_photo, join_date, location);
     return (
 
+        
+          
+
+
     <>
+    
+    
+
     <div className="modal fade" id="registerModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-centered" role="document">
                         <div className="modal-content">
@@ -47,6 +55,20 @@ const ProfileContainer = ( {user: { username , email, profile_photo, join_date, 
                 <div className="col-md-4">
                     <div className="profile-img">
                         <img src={profile_photo} alt="user"/>
+
+                            <div className="file btn btn-lg btn-primary">
+                                Change Photo
+                                
+                                
+    
+            
+            
+                                </div>
+                                <div>
+
+                                </div>
+                                
+
                     </div>
                 </div>
             <div className="col-md-6">

@@ -37,12 +37,16 @@ class Profile extends Component {
         )
     };
 
+    
+
 
     onChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value,
         });
     };
+
+
 
     componentDidMount() {
         const userId = localStorage.getItem('uid');
@@ -52,17 +56,22 @@ class Profile extends Component {
     };
 
 
+
+
     render() {
         return (
             
-            <ProfileContainer user={this.state} onSubmit={this.updateProfile} onChange={this.onChange}  />
+            <ProfileContainer user={this.state} onSubmit={this.updateProfile}  onChange={this.onChange}  />
             
             
             
         )
     }
 
+
 }
+
+
 
 
 export default Profile;

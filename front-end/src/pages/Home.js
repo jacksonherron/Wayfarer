@@ -6,6 +6,7 @@ import PostsContainer from '../containers/PostsContainer';
 // import NotFound from '../components/NotFound/NotFound';
 import './Home.css'
 
+
 class Home extends Component {
     state = {
         cities: []
@@ -28,11 +29,21 @@ class Home extends Component {
             <div id="home-container">
                 <>
                     <CitiesContainer cities={this.state.cities} />
+                    
                 </>
+            
                 <Switch>
+
+                     
+
                     <Route exact path='/home' render={(props) => <PostsContainer {...props} cities={this.state.cities} /> } />
                     <Route path='/home/:name' render={(props) => <PostsContainer {...props} cities={this.state.cities} />} />
+
                 </Switch>
+
+                
+
+                
             </div>
         );
     };
