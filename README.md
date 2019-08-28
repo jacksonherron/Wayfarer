@@ -29,29 +29,6 @@ https://wayfarer-mern-frontend.herokuapp.com/
 - Users have the option to update and delete their profile
 - Navigate between pages using a navbar
 
-----------------------------------------------------------------------------
-
-#### Database ERD:                                   
-
-###### City
-- Name 
-- Location 
-- Image
-
-###### Post 
-- User 
-- City
-- Title
-- Content 
-- Date_Posted
-
-###### User
-- Username
-- Email 
-- Profile_photo 
-- Join_date
-- Location
-- Password
 
 -------------------------------------------------------------------------------------------
 
