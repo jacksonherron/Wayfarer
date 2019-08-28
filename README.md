@@ -19,21 +19,21 @@ https://wayfarer-mern-frontend.herokuapp.com/
 -------------------------------------------
 
 #### Technologies Used
+- Node.JS
 - React
-- Node
 - Express
 - Mongoose/MongoDB
 - Bootstrap
 - JS
 - bcrypt/express-session for auth
 
+#### Code style
+- AirBnb JS
+
 #### Installation
 - Database: mongod
 - Back-end: npm i, nodemon
 - Front-end: npm i, npm start
-
-#### Code style
-- AirBnb JS
 
 ----------------------------------------------------------------------------
 
