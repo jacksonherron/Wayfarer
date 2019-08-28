@@ -6,7 +6,7 @@ https://wayfarer-mern-frontend.herokuapp.com/
 -------------------------------------------
 #### What is Wayfarer?
 
-- Wayfarer is a travel app for global-trotting community of users community to share city-specific tips ("posts" or "logs") about their favorite locations around the world.
+- Wayfarer is a travel app for a global-trotting community of users to share city-specific tips about their favorite locations around the world.
 
 -----------------------------------------------------------------------------------
 #### User Story
@@ -24,15 +24,15 @@ https://wayfarer-mern-frontend.herokuapp.com/
 - Express
 - Mongoose/MongoDB
 - Bootstrap
-- bcrypt/express-session for auth
+- Bcrypt/Express-Session for auth
 
 #### Code style
 - AirBnb JS
 
 #### Installation
 - Database: mongod
-- Back-end: npm i, nodemon
-- Front-end: npm i, npm start
+- Back-end: npm i; nodemon
+- Front-end: npm i; npm start
 
 ----------------------------------------------------------------------------
 
