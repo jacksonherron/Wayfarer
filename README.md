@@ -1,4 +1,4 @@
-WAYFARER
+# Wayfarer
 
 ## Link to Heroku
 https://wayfarer-mern-frontend.herokuapp.com/
