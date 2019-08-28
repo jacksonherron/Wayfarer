@@ -29,7 +29,6 @@ class Login extends Component {
     };
 
     handleSubmit = event => {
-        this.clearModal();
         const userInfo = {
             email: this.state.email,
             password: this.state.password
@@ -37,11 +36,12 @@ class Login extends Component {
 
         axios.post(`${API_URL}/auth/login`, userInfo, { withCredentials: true })
             .then(res => {
+                this.clearModal();
                 this.props.setCurrentUser(res.data.id, res.data.username);
-                this.props.history.push('/home')
+                this.props.history.push('/home');
             })
             .catch(err => {
-                console.log(err)
+                this.setState({ errors: err.response.data.errors });
         });
     };
 

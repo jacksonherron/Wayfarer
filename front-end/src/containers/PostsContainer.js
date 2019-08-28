@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { withRouter } from 'react-router-dom';
 import PostModel from '../models/PostModel';
 import NewPost from '../components/NewPost/NewPost';
 import Post from '../components/Post/Post';
@@ -77,4 +78,4 @@ class PostsContainer extends Component {
     };
 };
 
-export default PostsContainer;
+export default withRouter(PostsContainer);
