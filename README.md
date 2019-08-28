@@ -1,61 +1,56 @@
-WAYFARER
+# Wayfarer
 
-Link to Application
-https://github.com/jacksonherron/Wayfarer
-
-
-
-Link to Heroku
+## Link to Heroku
 https://wayfarer-mern-frontend.herokuapp.com/
 
 -------------------------------------------
+#### What is Wayfarer?
 
+- Wayfarer is a travel app for a global-trotting community of users to share city-specific tips about their favorite locations around the world!
 
-Technologies Used
-- React
-- Mongoose
-- Express
-- Node.JS
-- MongoDB
-- Bootstrap
-- JS
+-----------------------------------------------------------------------------------
+#### User Story
+- Sign up to create a profile and then login to the site
+- Be redirected to a home page where cities and posts can be viewed
+- Have the option to create, edit, and delete their own posts
+- Have the option to update and delete their profile
+- Navigate between pages using a navbar
 
 -------------------------------------------
 
+#### Technologies Stack (MERN)
+- Node.JS
+- React
+- Express
+- Mongoose/MongoDB
+- Bootstrap
+- Bcrypt/Express-Session for auth
 
+#### Code style
+- AirBnb JS
 
-What is Wayfarer?
-- Wayfarer is your best travel app.The Wayfarer is going to be there with you ever step of the way. Connect with others during your journey! Travel smarter, cheaper, and longer. 
-
-
-What is Wayfarer's goal?
-- The primary goal of this website is to allow the user to look for cities and create their favorite destination. 
-
------------------------------------------------------------------------------------
-User Story
-- Sing up to create a profile and login/logout
-- Create a list of their favorite cities
-- Have the option to delete and update the cities
-- Have the option to delete and update the profile
-- Users should be able to navigate to different pages through NavBar
+#### Installation
+- Database: mongod
+- Back-end: npm i; nodemon
+- Front-end: npm i; npm start
 
 ----------------------------------------------------------------------------
 
-ERD                                            
+#### Database ERD:                                   
 
-CITY 
+###### City
 - Name 
 - Location 
 - Image
 
-POST 
+###### Post 
 - User 
 - City
 - Title
 - Content 
 - Date_Posted
 
-USER 
+###### User
 - Username
 - Email 
 - Profile_photo 
@@ -63,32 +58,20 @@ USER
 - Location
 - Password
 
-----------------------------------------------------------------------------------------
-
-Code style
-- AirBnb
-
-
-Installation
-- Back-end: nodemon
-- Database: mongod
-- Fron-end: npm start
 -------------------------------------------------------------------------------------------
 
-TEAM
+#### Team
 - Jackson Herron
 - James Wang
 - Christian Villa
 - Aza Baiyzbekov
 
-
-Credits
+#### Instructors
 - Kenny Bushman
 - Dalton Hart
 - Matt Freeland
 
-
-License
+#### License
 - MIT: © Chillbraltar
 
 
