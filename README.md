@@ -18,13 +18,12 @@ https://wayfarer-mern-frontend.herokuapp.com/
 
 -------------------------------------------
 
-#### Technologies Used
+#### Technologies Stack (MERN)
 - Node.JS
 - React
 - Express
 - Mongoose/MongoDB
 - Bootstrap
-- JS
 - bcrypt/express-session for auth
 
 #### Code style
@@ -72,7 +71,7 @@ https://wayfarer-mern-frontend.herokuapp.com/
 - Dalton Hart
 - Matt Freeland
 
-License
+#### License
 - MIT: © Chillbraltar
 
 
