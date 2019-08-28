@@ -60,7 +60,7 @@ https://wayfarer-mern-frontend.herokuapp.com/
 
 -------------------------------------------------------------------------------------------
 
-#### TEAM
+#### Team
 - Jackson Herron
 - James Wang
 - Christian Villa
