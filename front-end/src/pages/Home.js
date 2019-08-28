@@ -31,8 +31,8 @@ class Home extends Component {
                 <div id="home-container">
                     <CitiesContainer cities={this.state.cities} />
                     <Switch>
-                        <Route exact path='/home' render={(props) => <PostsContainer {...props} cities={this.state.cities} /> } />
-                        <Route path='/home/:name' render={(props) => <PostsContainer {...props} cities={this.state.cities} />} />
+                        <Route exact path='/home' render={(props) => <PostsContainer cities={this.state.cities} /> } />
+                        <Route path='/home/:name' render={(props) => <PostsContainer cities={this.state.cities} />} />
 
                     </Switch>
                 </div>
