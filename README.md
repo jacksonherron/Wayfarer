@@ -6,7 +6,7 @@ https://wayfarer-mern-frontend.herokuapp.com/
 -------------------------------------------
 #### What is Wayfarer?
 
-- Wayfarer is a travel app for a global-trotting community of users to share city-specific tips about their favorite locations around the world!
+- Wayfarer is a travel app for a global-trotting community of users to share city-specific tips about their favorite locations around the world! This project was completed in 5 days as a faux client-project for General Assembly's Software Engineering Immersive 3 course in August, 2019.
 
 -------------------------------------------
 
