@@ -1,16 +1,16 @@
 WAYFARER
 
-##Link to Heroku
+## Link to Heroku
 https://wayfarer-mern-frontend.herokuapp.com/
 
 -------------------------------------------
 
-####Installation
+#### Installation
 - Database: mongod
 - Back-end: npm i, nodemon
 - Front-end: npm i, npm start
 
-####Technologies Used
+#### Technologies Used
 - React
 - Node
 - Express
@@ -19,18 +19,18 @@ https://wayfarer-mern-frontend.herokuapp.com/
 - JS
 - bcrypt/express-session for auth
 
-####Code style
+#### Code style
 - AirBnb JS
 
 
 -------------------------------------------
-####What is Wayfarer?
+#### What is Wayfarer?
 
 - Wayfarer is a travel app for global-trotting community of users community to share city-specific tips ("posts" or "logs") about their favorite locations around the world.
 
 
 -----------------------------------------------------------------------------------
-####User Story
+#### User Story
 - Sign up to create a profile and then login to the site
 - Be redirected to a home page where cities/posts and posts can be viewed
 - Have the option to create, edit, and delete their own posts
@@ -39,21 +39,21 @@ https://wayfarer-mern-frontend.herokuapp.com/
 
 ----------------------------------------------------------------------------
 
-####Database ERD:                                   
+#### Database ERD:                                   
 
-######City
+###### City
 - Name 
 - Location 
 - Image
 
-######Post 
+###### Post 
 - User 
 - City
 - Title
 - Content 
 - Date_Posted
 
-######User
+###### User
 - Username
 - Email 
 - Profile_photo 
@@ -63,14 +63,14 @@ https://wayfarer-mern-frontend.herokuapp.com/
 
 -------------------------------------------------------------------------------------------
 
-####TEAM
+#### TEAM
 - Jackson Herron
 - James Wang
 - Christian Villa
 - Aza Baiyzbekov
 
 
-####Instructors
+#### Instructors
 - Kenny Bushman
 - Dalton Hart
 - Matt Freeland
