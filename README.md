@@ -6,12 +6,12 @@ https://wayfarer-mern-frontend.herokuapp.com/
 -------------------------------------------
 #### What is Wayfarer?
 
-- Wayfarer is a travel app for a global-trotting community of users to share city-specific tips about their favorite locations around the world.
+- Wayfarer is a travel app for a global-trotting community of users to share city-specific tips about their favorite locations around the world!
 
 -----------------------------------------------------------------------------------
 #### User Story
 - Sign up to create a profile and then login to the site
-- Be redirected to a home page where cities/posts and posts can be viewed
+- Be redirected to a home page where cities and posts can be viewed
 - Have the option to create, edit, and delete their own posts
 - Have the option to update and delete their profile
 - Navigate between pages using a navbar
