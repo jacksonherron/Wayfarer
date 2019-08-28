@@ -6,7 +6,10 @@
 
 .city-card {
   margin-bottom: 0.5rem;
-  text-align: center !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 120px;
 }
 
 a .card {
@@ -15,7 +18,6 @@ a .card {
 .card-header {
   padding: 0.5rem;
   text-decoration: none !important;
-
 }
 
 .card-block {
@@ -34,12 +36,16 @@ a .card {
 
 .card-title {
   color: black;
-  font-size: 2.7em;
+  font-size: 2em;
   text-decoration: none !important;
 
 }
 
-.is-active > div {
+.is-active * {
   background-color: rgb(190, 63, 55)  !important;
-  color: white;
+  color: white!important;
+}
+
+#cities-container * {
+  text-decoration: none;
 }

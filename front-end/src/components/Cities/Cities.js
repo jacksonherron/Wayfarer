@@ -1,6 +1,6 @@
 import React from 'react';
 import './Cities.css';
-import { Link } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 
 
 const links = {
@@ -14,10 +14,11 @@ const links = {
 
 
 const Cities = (props) => {
+
     return (
         <>
             {props.cities.map((city, i) => (
-                <Link to={`/home/${links[city.name]}`} key={i}>
+                <NavLink to={`/home/${links[city.name]}`} activeClassName='is-active' key={i}>
                     <div className="card city-card flex-row flex-wrap city-collapse show" >
                         <div className="card-header border-0">
                             <img className="city-image" src={city.image} alt={city.name} />
@@ -27,9 +28,9 @@ const Cities = (props) => {
                         </div>
                         <div className="w-100"></div>
                     </div>
-                </Link>
+                </NavLink>
             ))}
         </>
     )
 }
-export default Cities;
+export default withRouter(Cities);

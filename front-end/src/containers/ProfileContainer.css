@@ -37,9 +37,7 @@ body{
 .profile-head h5{
     color: #333;
 }
-.profile-head h6{
-    color: #0062cc;
-}
+
 .profile-edit-btn{
     border: none;
     border-radius: 1.5rem;
@@ -68,7 +66,7 @@ body{
 }
 .profile-head .nav-tabs .nav-link.active{
     border: none;
-    border-bottom:2px solid #0062cc;
+    border-bottom:2px solid rgb(190, 63, 55);
 }
 .profile-work{
     padding: 14%;
@@ -94,7 +92,14 @@ body{
 }
 .profile-tab p{
     font-weight: 600;
-    color: #0062cc;
+}
+
+#myTabContent{
+    padding-top: 1rem;
+}
+
+#home-tab:hover {
+    color: rgb(190, 63, 55)!important;
 }
 
 

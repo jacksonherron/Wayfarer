@@ -8,20 +8,6 @@ class Post extends Component {
         title: this.props.post.title,
         content:  this.props.post.content,
     }
-
-
-    clearModal = () => {
-        // const modal = document.getElementById(`postModal-${this.props.post._id}`);
-        // const body = document.querySelectorAll(`.modal-open`);
-        // const modalBackdrop = document.querySelectorAll(`.modal-backdrop`);
-        // modal.classList.remove('show');
-        // modal.style.display = 'none';
-        // modal.removeAttribute('aria-modal');
-        // modal.setAttribute('aria-hidden', true);
-        // body.classList.remove('modal-open');
-        // modalBackdrop.parentNode.removeChild(modalBackdrop);
-    }
-
     
 
     updatePost = (event) => {
@@ -35,7 +21,6 @@ class Post extends Component {
         const postId = this.props.post
         axios.put(`${API_URL}/posts/${postId._id}`, updatedPost).then(
             res => {
-                this.clearModal();
                 this.props.fetchPosts();
             }
         )

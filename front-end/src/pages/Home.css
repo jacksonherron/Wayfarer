@@ -26,13 +26,15 @@ h4, p {
 }
 
 #cities-container {
-
+  overflow: scroll;
   width: 40%;
+  max-height: 120vh
 }
 
 #posts-container {
-
+  overflow: scroll;
   width: 60%;
+  max-height: 120vh;
 }
 
 #city-detail {
@@ -49,6 +51,7 @@ h4, p {
 #city-detail h1 {
   color: #007bff;
   margin: 0.25rem 0;
+  text-align: center;
 }
 
 #city-detail div {
