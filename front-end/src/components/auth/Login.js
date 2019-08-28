@@ -10,6 +10,18 @@ class Login extends Component {
         errors: null,
     };
 
+    clearModal = () => {
+        const modal = document.getElementById('loginModal');
+        const body = document.querySelector('.modal-open');
+        const modalBackdrop = document.querySelector('.modal-backdrop');
+        modal.classList.remove('show');
+        modal.style.display = 'none';
+        modal.removeAttribute('aria-modal');
+        modal.setAttribute('aria-hidden', true);
+        body.classList.remove('modal-open');
+        modalBackdrop.parentNode.removeChild(modalBackdrop);
+    }
+
     handleChange = event => {
         this.setState({
             [event.target.name]: event.target.value
@@ -17,6 +29,7 @@ class Login extends Component {
     };
 
     handleSubmit = event => {
+        this.clearModal();
         const userInfo = {
             email: this.state.email,
             password: this.state.password
@@ -69,7 +82,7 @@ class Login extends Component {
                                     </div>
                                 </form>
                             </div>
-                            <button onClick={this.handleSubmit} className="btn btn-primary" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Login</span></button>
+                            <button onClick={this.handleSubmit} className="btn btn-primary">Login</button>
                         </div>
                     </div>
                 </div>
