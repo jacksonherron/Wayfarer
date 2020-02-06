@@ -5,15 +5,7 @@ import './ProfileContainer.css'
 const ProfileContainer = ( {user: { username , email, profile_photo, join_date, location }, onSubmit, onChange}) => {
     console.log(username , email, profile_photo, join_date, location);
     return (
-
-        
-          
-
-
     <>
-    
-    
-
     <div className="modal fade" id="registerModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-centered" role="document">
                         <div className="modal-content">

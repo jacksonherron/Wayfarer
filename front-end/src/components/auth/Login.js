@@ -49,7 +49,7 @@ class Login extends Component {
     render() {
         return (
             <>
-                 <li className="nav-item">
+                <li className="nav-item">
                     <span className="nav-link" data-toggle="modal" data-target="#loginModal" style={{ cursor: 'pointer'}}>Login</span>
                 </li>
                 

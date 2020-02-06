@@ -32,7 +32,7 @@ class PostsContainer extends Component {
     pushNewPost = (post) => {
         const posts = this.state.posts;
         posts.push(post);
-        this.setState({ posts })
+        this.setState(prevState => {return { posts: [...prevState.posts, post] }})
     };
 
     fetchPosts = () => {

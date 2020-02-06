@@ -16,5 +16,5 @@ router.put('/:_id', ctrl.users.update);
 module.exports = router;
 
 
-module.exports = router;
+module.exports = router; 
 
